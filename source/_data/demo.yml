@@ -1,0 +1,5 @@
+# 数据文件,可以让你在模板中引用在这里定义的值
+# https://hexo.io/zh-cn/docs/data-files.html
+Home: /
+Gallery: /gallery/
+Archives: /archives/
