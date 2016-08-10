@@ -2,8 +2,12 @@
 title: CSS样式命名应该用id还是用class?
 layout: post
 date: 2016-07-28 15:25:18
-categories: Web前端
-tags: css id class
+categories: 
+- Web前端
+tags: 
+- css 
+- id
+- class
 ---
 
 

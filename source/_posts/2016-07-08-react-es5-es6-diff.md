@@ -2,8 +2,13 @@
 title: 使用es5和es6写React有什么变化
 layout: post
 date: 2016-07-08 14:37:44
-categories: Web前端
-tags: react es5 es6 babel
+categories: 
+- Web前端
+tags: 
+- react 
+- es5
+- es6
+- babel
 ---
 babel官方和一篇blog,说的已经很详细了。
 

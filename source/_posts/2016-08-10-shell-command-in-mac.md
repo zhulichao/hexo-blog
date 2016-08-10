@@ -2,8 +2,12 @@
 title: Shell指令大全(Mac版)
 layout: post
 date: 2016-08-10 09:56:33
-categories: 开发工具
-tags: shell osx mac
+categories: 
+- 开发工具
+tags: 
+- shell
+- osx
+- mac
 ---
 
 龟速积累中,按照命令首字母排序
