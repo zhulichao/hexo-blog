@@ -23,10 +23,12 @@ tags:
 > 技巧: margin: 0 auto;  
 设置块级元素的width(更好的方式是用max-width设置最大宽度)阻止它从左到右撑满容器,然后设置左右外边距为auto来使其水平居中
 
+
 ### 盒模型
 此处省略500字,这里不是为了介绍盒模型,当各种block的内外边距影响块的实际大小时,我们需要以下技巧消除对布局造成的影响。
 
 > 技巧: * { box-sizing:border-box; }
+
 
 ### 用position属性来布局
 - static(默认): 不会被特殊的定位
@@ -38,14 +40,17 @@ tags:
 [教程](http://zh.learnlayout.com/position-example.html) [代码](https://codepen.io/nail2008/pen/JRPprW)  
 菜单nav使用绝对位置,当过长时会超出容器。这种方式有些落后了。
 
+
 ### 用float属性来布局
 
 > Demo: 使用float属性实现图片右对齐,文字环绕  
 [教程](http://zh.learnlayout.com/float.html) [代码](https://codepen.io/nail2008/pen/RGbQYJ)  
 
+
 > 技巧: 使用clear属性消除左右浮动:left、right、both,效果相当于换行  
 [教程](http://zh.learnlayout.com/clear.html) [代码](https://codepen.io/nail2008/pen/pEzaQv)  
 但这有个问题是当该元素比旁边的元素要长时,会冲破容器,看下面的例子:
+
 
 > 技巧: 使用clearfix hack消除浮动  
 [教程](http://zh.learnlayout.com/clearfix.html) [代码](https://codepen.io/nail2008/pen/JRPpQO)  
@@ -65,8 +70,10 @@ img {
 [教程1](http://zh.learnlayout.com/float-layout.html) [教程2](http://zh.learnlayout.com/percent.html) [代码](https://codepen.io/nail2008/pen/YGKazO)  
 之前的主流方法之一,建议宽度使用百分比
 
+
 > Demo: 使用媒体查询实现响应式布局  
 [教程](http://zh.learnlayout.com/media-queries.html) [代码](https://codepen.io/nail2008/pen/ozvqXd)  
+
 
 ### 用inline-block来布局
 [教程](http://zh.learnlayout.com/inline-block.html) [代码](https://codepen.io/nail2008/pen/yaBjZK)  
@@ -96,6 +103,7 @@ img {
 > Demo: 使用inline-block布局  
 [教程](http://zh.learnlayout.com/inline-block-layout.html) [代码](https://codepen.io/nail2008/pen/ALAaqm)  
 这例子在我这有问题,宽度超过了容器,串行了
+
  
 ### 多列column (IE10+)
 [教程](http://zh.learnlayout.com/column.html) [代码](https://codepen.io/nail2008/pen/ORLkxm)  
@@ -108,17 +116,20 @@ img {
 ```
 
 ### 用flex来布局
-建议看下面的资料来学习,本文说的比较简单:
 [教程](http://zh.learnlayout.com/flexbox.html) [代码](https://codepen.io/nail2008/pen/VKkxyZ)  
 
+建议看下面的资料来学习,本文说的比较简单:  
 [CSS3布局属性全接触@极客学院](http://www.jikexueyuan.com/course/1403.html)  
 [Flexbox Playground](https://demos.scotch.io/visual-guide-to-css3-flexbox-flexbox-playground/demos/)  
 
 > 技巧: flex布局默认所有元素高度为最高的那个元素的高度(横向)
 
+
 > 技巧: 子元素占满剩余空间:设置子元素 flex:1
 
+
 > 技巧: 水平、垂直都居中
+
 ```
 .vertical-container {
   display: flex;
