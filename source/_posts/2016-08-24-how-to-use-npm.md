@@ -15,6 +15,20 @@ tags:
 - [NPM入了个门](http://www.cnblogs.com/fsjohnhuang/p/4178019.html)
 - [菜鸟教程](http://www.runoob.com/nodejs/nodejs-npm.html)
 
+## 常用命令
+```
+npm ls jquery
+```
+```
+cdp-ui duanyiding$ npm ls jquery
+cdp-ui@0.0.1 /Users/duanyiding/WebstormProjects/cdp-ui
+`-- rc-queue-anim@0.12.4
+  `-- velocity-animate@1.2.3
+    `-- jquery@3.1.0 
+
+```
+
+
 ## 网上说得不太清除的几个事儿
 ### 依赖版本中使用 ~ 和 ^ 的区别  
 这个问题其实说的是**语义化版本SemVer**。  
