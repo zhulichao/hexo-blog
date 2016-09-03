@@ -3,16 +3,16 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 丁丁爱历险
+title: 前端历险记
 subtitle:
-description: 诗和远方 永远存在
-author: 一丁
+description: 前端学习之路
+author: 小朱
 language: zh-Hans
 timezone:
-
+avatar: /uploads/me.jpg
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://nail2008.github.io
+url: https://zhulichao.github.io
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -69,7 +69,20 @@ theme: next
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://github.com/nail2008/nail2008.github.io.git
+  repo: https://github.com/zhulichao/zhulichao.github.io.git
   branch: master
 
+baidu_analytics: 41d77ee7657d4e19a7f8a6361fe2121f
+
+search:
+  path: search.xml
+  field: post
+
+duoshuo_shortname: zlc10
+duoshuo_share: true
+duoshuo_info:
+  ua_enable: true
+  admin_enable: false
+  user_id: 6325922180978705000
+  admin_nickname: 小朱
 
