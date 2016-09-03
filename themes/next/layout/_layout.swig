@@ -25,8 +25,11 @@
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"> {%- include '_partials/header.swig' %} </div>
+      {% if theme.sidebar.display !== 'remove' %}
+          {% block sidebar %}{% endblock %}
+        {% endif %}
     </header>
-
+ 
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
@@ -36,9 +39,7 @@
           {% include '_partials/duoshuo-hot-articles.swig' %}
           {% include '_partials/comments.swig' %}
         </div>
-        {% if theme.sidebar.display !== 'remove' %}
-          {% block sidebar %}{% endblock %}
-        {% endif %}
+       
       </div>
     </main>
 

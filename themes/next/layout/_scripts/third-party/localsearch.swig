@@ -25,7 +25,10 @@
         success: function( xmlResponse ) {
             // get the contents from search data
             isfetched = true;
-            $('.popup').detach().appendTo('.header-inner');
+
+            $('.popup').detach().appendTo('.container');
+            //$('.popup').detach().appendTo('.header-inner');
+
             var datas = $( "entry", xmlResponse ).map(function() {
                 return {
                     title: $( "title", this ).text(),

@@ -32,6 +32,7 @@ $(document).ready(function () {
     var headerHeight = $('.header-inner').height();
     var footerOffset = parseInt($('.main').css('padding-bottom'), 10);
     var sidebarTop = headerHeight + 10;
+    
 
     $('.sidebar-inner').affix({
       offset: {

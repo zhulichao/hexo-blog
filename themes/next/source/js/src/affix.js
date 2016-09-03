@@ -27,7 +27,7 @@
 
     this.checkPosition()
   }
-
+//debugger;//1
   Affix.VERSION  = '3.3.5'
 
   Affix.RESET    = 'affix affix-top affix-bottom'
@@ -87,6 +87,7 @@
     var affix = this.getState(scrollHeight, height, offsetTop, offsetBottom)
 
     if (this.affixed != affix) {
+      //debugger;
       if (this.unpin != null) this.$element.css('top', '')
 
       var affixType = 'affix' + (affix ? '-' + affix : '')
@@ -101,7 +102,7 @@
 
       this.$element
         .removeClass(Affix.RESET)
-        .addClass(affixType)
+        //.addClass(affixType)
         .trigger(affixType.replace('affix', 'affixed') + '.bs.affix')
     }
 

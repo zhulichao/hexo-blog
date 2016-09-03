@@ -13,11 +13,11 @@
 }
 
 .menu .menu-item {
-  display: block;
+  display: block;// inline
   margin: 0;
   list-style: none;
-
   a {
+    //display:inline;
     position: relative;
     box-sizing: border-box;
     padding: 5px 20px;
@@ -34,6 +34,32 @@
 
   br { display: none; }
 }
+
+@media (min-width: 768px) and (max-width: 990px){
+  .menu .menu-item {
+  display: inline;
+  margin: 0;
+  list-style: none;
+  a {
+    display:inline;
+    position: relative;
+    box-sizing: border-box;
+    padding: 5px 20px;
+    text-align: left;
+    line-height: inherit;
+    transition-property: background-color;
+    the-transition();
+
+    &:hover {
+      background: #f9f9f9;
+      border-bottom-color: white;
+    }
+  }
+
+  br { display: none; }
+}
+}
+
 
 .menu-item-active a {
   @extend .menu .menu-item a:hover;

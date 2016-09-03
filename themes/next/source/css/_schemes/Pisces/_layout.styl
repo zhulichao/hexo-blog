@@ -4,7 +4,10 @@
   width: 960px;
 
   +tablet() {
-    width: auto;
+    position: fixed;
+    width: 100%;
+    z-index:1;
+    //width: auto;
   }
   +mobile() {
     width: auto;
@@ -12,7 +15,7 @@
 }
 
 .header-inner {
-  position: absolute;
+  position: fixed;
   top: 0;
   overflow: hidden;
   padding: 0;
@@ -53,6 +56,13 @@
   }
 }
 
+@media (min-width: 768px) and (max-width: 990px) {
+  .content {
+    padding-top: 120px;
+  }
+}
+
+
 .content-wrap {
   float: right;
   box-sizing: border-box;
@@ -73,7 +83,7 @@
 }
 
 .sidebar {
-  position: static;
+  position: fixed;
   float: left;
   margin-top: 300px;
   width: $sidebar-desktop;

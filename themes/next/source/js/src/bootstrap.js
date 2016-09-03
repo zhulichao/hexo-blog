@@ -21,7 +21,7 @@ $(document).ready(function () {
       $siteNav[animateCallback](ON_CLASS_NAME);
     });
   });
-
+  $('.site-nav-toggle button').click();
 
   CONFIG.fancybox && NexT.utils.wrapImageWithFancyBox();
   NexT.utils.embeddedVideoTransformer();
