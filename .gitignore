@@ -6,3 +6,5 @@ node_modules/
 public/
 .deploy*/
 .idea/
+zlc_hideFolder/
+zlc_selfCode/

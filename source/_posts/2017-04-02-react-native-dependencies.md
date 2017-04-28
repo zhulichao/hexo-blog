@@ -1,0 +1,28 @@
+---
+title: React-Native-依赖
+layout: post
+date: 2017-04-02 09:40:33
+categories: React-Native
+tags: React-Native
+---
+
+## 使用过的react-native依赖
+
+[react-native-vector-icons](https://github.com/oblador/react-native-vector-icons) 图标
+{% img https://zhulichao.github.io/2017/04/02/react-native-dependencies/icon.jpg 300 图标 %}
+[react-native-image-picker](https://github.com/marcshilling/react-native-image-picker) 相机、相册
+{% img https://zhulichao.github.io/2017/04/02/react-native-dependencies/image.jpg 300 相机、相册 %}
+[react-native-circular-progress](https://github.com/bgryszko/react-native-circular-progress) 原型进度条
+{% img https://zhulichao.github.io/2017/04/02/react-native-dependencies/circle.jpg 300 原型进度条 %}
+[react-native-slider](https://github.com/jeanregisser/react-native-slider) 水平滑动条
+{% img https://zhulichao.github.io/2017/04/02/react-native-dependencies/slider.jpg 300 水平滑动条 %}
+[react-native-smart-amap](https://github.com/react-native-component/react-native-smart-amap) 高德地图
+{% img https://zhulichao.github.io/2017/04/02/react-native-dependencies/ios-map.jpg 300 高德地图 %}
+[react-native-smart-amap-location](https://github.com/react-native-component/react-native-smart-amap-location) 高德定位
+{% img https://zhulichao.github.io/2017/04/02/react-native-dependencies/location.jpg 300 高德定位 %}
+[react-native-fetch-blob](https://github.com/wkh237/react-native-fetch-blob) 打开文件
+{% img https://zhulichao.github.io/2017/04/02/react-native-dependencies/open.jpg 300 打开文件 %}
+[react-native-fetch-blob](https://github.com/wkh237/react-native-fetch-blob) 文件上传下载
+{% img https://zhulichao.github.io/2017/04/02/react-native-dependencies/file.gif 300 文件上传下载 %}
+
+

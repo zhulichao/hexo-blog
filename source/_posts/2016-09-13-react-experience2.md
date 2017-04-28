@@ -1,12 +1,19 @@
 ---
-title: react-学习经验2
+title: React-学习经验2
 layout: post
 date: 2016-09-13 08:44:03
 categories: React
 tags: React
 ---
 
+## MVVM(Model-View-ViewModel)
+
+MVC—>MVP—>MVVM  
+MVVM框架的由来是MVP（Model-View-Presenter）模式与WPF（Windows Presentation Foundation）结合的应用方式时发展演变过来的一种新型架构框架。它立足于原有MVP框架并且把WPF的新特性糅合进去，以应对客户日益复杂的需求变化。  
+低耦合 可重用性 独立开发 可测试
+
 ## 零散知识  
+
 - ReactDOM.render(Component,dom) 执行后，这个dom还会存在，这个Component是在最外层。  
 感觉很奇怪  
 ```
@@ -15,5 +22,57 @@ ReactDOM.render(this.state.customScript.buttonAndPopoverComponents(), document.g
 ```
 {% img https://zhulichao.github.io/2016/09/13/react-experience2/renderDOM.png 结果如图 %}
  
+## 解析jsx
+
+```
+return (  
+  <div className="commentBox">  
+    Hello, world! I am a CommentBox.  
+  </div>  
+); 
+```
+
+```
+return (  
+  React.createElement('div', {className: "commentBox"},  
+    "Hello, world! I am a CommentBox."  
+  )  
+);  
+```
+
+Babel 设置匹配后缀，文件后缀为.jsx，就不会对<报错。Babel之所以可以按照各种要求编译JavaScript代码文件，是因为使用了各种插件和预设(预设是插件的打包封装)。
+
+## key的作用
+
+今天遇到了一个奇怪的现象，下面代码是在同一个页面中，点击不同按钮时显示单选或多选树，结果出现了错误，debugger调试时看到是组件在更新时出了问题，更新时没有找到正确的组件，先显示单选树再显示多选树会在单选的树上更新的，由于没有多选的一些属性而报错。解决办法就是放开注释的key属性，这样更新时就能找到相应的组件了。这是我第一次体会到key的作用。
+
+```
+...
+render() {
+    return (
+        <div>
+            {
+                this.props.multi ?
+                    <Tree
+                        // key="tree-multi"
+                        checkable
+                        onCheck={this.onCheck}
+                        checkedKeys={this.state.selectedKeys}
+                    >
+                        {loop(this.props.userData)}
+                    </Tree>
+                :
+                    <Tree
+                        // key="tree-single"
+                        onSelect={this.onSelect}
+                    >
+                        {loop(this.props.userData)}
+                    </Tree>
+            }
+        </div>
+    );
+}
+
+```
 
 
