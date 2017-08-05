@@ -2,8 +2,8 @@
 title: React-Native-IOS使用高德地图
 layout: post
 date: 2017-03-24 23:11:04
-categories: React-Native
-tags: React-Native
+categories: React Native
+tags: React Native
 ---
 
 ## 高德地图key值

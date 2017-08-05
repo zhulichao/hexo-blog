@@ -39,6 +39,28 @@ Javascript执行引擎的主线程运行的时候，产生堆和栈。程序中�
 
 主线程从"任务队列"中读取事件，只要执行栈一清空，"任务队列"上第一位的事件就自动返回主线程，这个过程是循环不断的，所以整个的这种运行机制又称为事件循环(Event Loop)。
 
+示例一输出结果都是4，表明程序是先运行完4次循环后，再进入setTimeout的。
+实例二输出结果是1001，表明程序是向下执行完while循环后，再进入setTimeout的。
+
+```
+// 示例一
+for(var i = 0; i<=3; i++){
+    setTimeout(function() {
+        console.log(i); // 输出4
+    }, 0);
+}
+```
+
+```
+// 实例二
+var startDate = new Date();
+setTimeout(function() {
+    var endDate = new Date();
+    console.log(endDate - startDate); // 输出1001
+}, 500);
+while(new Date() - startDate < 1000){};
+```
+
 ## 定时器
 
 "任务队列"除了放置异步任务，还可以放置定时事件，即指定某些代码在多少时间之后执行，即到达设置的延时时间时被添加至任务队列里。定时器功能主要由setTimeout()和setInterval()这两个函数来完成，它们的内部运行机制完全一样，区别在于前者指定的代码是一次性执行，后者则为反复执行。如果将setTimeout()的第二个参数设为0，就表示当前代码执行完（执行栈清空）以后，立即执行（0毫秒间隔）指定的回调函数。

@@ -2,8 +2,8 @@
 title: React-Native-依赖
 layout: post
 date: 2017-04-02 09:40:33
-categories: React-Native
-tags: React-Native
+categories: React Native
+tags: React Native
 ---
 
 ## 使用过的react-native依赖
@@ -24,5 +24,9 @@ tags: React-Native
 {% img https://zhulichao.github.io/2017/04/02/react-native-dependencies/open.jpg 300 打开文件 %}
 [react-native-fetch-blob](https://github.com/wkh237/react-native-fetch-blob) 文件上传下载
 {% img https://zhulichao.github.io/2017/04/02/react-native-dependencies/file.gif 300 文件上传下载 %}
+[react-native-device-info](https://github.com/rebeccahughes/react-native-device-info) 获取设备信息
+[react-native-imei](https://github.com/SimenCodes/react-native-imei) 获取设备IMEI码
+[react-native-orientation](https://github.com/yamill/react-native-orientation) 监听设备方向变化、设置屏幕方向锁定
+[react-native-sqlite-storage](https://github.com/andpor/react-native-sqlite-storage) SQLite数据库
 
 

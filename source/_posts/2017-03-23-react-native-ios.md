@@ -2,8 +2,8 @@
 title: React-Native-IOS开发
 layout: post
 date: 2017-03-23 08:25:52
-categories: React-Native
-tags: React-Native
+categories: React Native
+tags: React Native
 ---
 
 最近在入门用React Native进行IOS开发，由于开始的时候没有设备，是在Android上开发的，开发出一部分功能后又在IOS上调试的，其中遇到的问题整理如下。
@@ -17,8 +17,10 @@ tags: React-Native
 - Command+H             隐藏除当前应用程序之外所有程序
 - Command+Option+M+H    隐藏所有应用程序窗口
 - Command+Q             关闭当前应用程序
+- Command+S             将模拟器屏幕截图保存到桌面
 - Command+Tab 选中程序，松开Tab，按住Command不放的同时按住Opt，松开Command 将最小化的窗口恢复回来
 - Command+Shift+K       Xcode中clean项目
+- Simulator -> window -> Scale 调整模拟器窗口大小
 
 ### 命令
 

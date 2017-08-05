@@ -1,4 +1,4 @@
-{% img https://zhulichao.github.io/2016/09/28/css-scattered/word-wrap.png word-wrap属性 %}
+{% img https://zhulichao.github.io/2017/07/08/javascript-base2/继承.png 继承 %}
 
 ---
 
@@ -16,44 +16,39 @@
 
 处理我的通用文件
 
+cdp-ui基于less的主题切换，如果要做主题切换功能，一定是存在多套样式，或通过变量来控制，否则根本达不到切换的效果
+
+Nightmare 功能测试的框架，如打开淘宝首页，在搜索框键入电视机，点击“搜索”按钮
+
 ---
 
 ## 本周任务
 
 async await
 
-antd-mobile 注意点
+* 学习Redux-saga，可以解决cdp-ui中发起多个请求的问题，处理异步利器 -- Redux-saga  https://zhuanlan.zhihu.com/p/25024255
 
-JavaScript 全栈工程师培训教程  http://www.ruanyifeng.com/blog/2016/11/javascript.html
-
-[React-Native学习指南](https://github.com/reactnativecn/react-native-guide)
-[Awesome React Native](https://github.com/jondot/awesome-react-native)
-
-MySql WorkBench
-
+cookie 和 session
 
 ---
 
 ## 近期需要看
 
-cdp-ui基于less的主题切换
+gitbook
 
-require 变量  webpack打包
+photoshop
 
-cdp-ui-static 打包图片的问题
+npm命令 参数
 
-npm
+bootstrap 学习
+
+jquery学习
 
 package.json
-
-react  虚拟dom diff
-虚拟DOM：将真实的DOM结构映射成一个JSON数据结构
 
 antd
 
 js 原生语法，document的操作 window对象
-
-redux action和进入reducer的顺序，http://www.open-open.com/lib/view/open1451828208948.html，redux-sequence-action 中间件。 redux-saga
 
 CSS Modules 用法教程 http://www.ruanyifeng.com/blog/2016/06/css_modules.html
 
@@ -95,31 +90,47 @@ CDP wiki
 
 jsp、servlet
 
-TCP 三次握手
-
-less 主题切换
-
-http://semver.org/lang/zh-CN/ 语义化版本
-
 后端接口一般是 REST 形式，前后端的通信协议一般是 HTTP。
+
+需要看jquery、react的源码学习js
 
 ---
 
 ## 工作需要
 
-带方向、带团队、汇报，技术预言 react-native、ant mobile 、weex、vue
+带方向、带团队、汇报
 
 react angularjs vue ember
 
+vue weex
+
 信息架构、理顺思路、工作计划
 
-CI（Continuous integration） 系统 持续集成 自动化测试
+CI（Continuous integration）持续集成，TeamCity，Travis CI
 
-《javascript语言精粹》
-《javascript高性能》
-《javascript模式》
+系统 
 
+自动化测试
 
-webpack 分离常用依赖、css；打包生产环境；
-    
-        redux-saga
+---
+
+## 乱七八糟
+
+application、activity、fragment 之间的关系，application->activity->fragment。
+
+关注技术发展动态！！！kotlin
+springside
+http://calvin1978.blogcn.com/articles/dailysites.html   infoQ
+
+https://nei.netease.com
+
+Backbone 框架
+
+江西天然气封装类库
+
+学习命令行操作git
+
+ES6: 对象的扩展
+     async await
+
+Fireworks

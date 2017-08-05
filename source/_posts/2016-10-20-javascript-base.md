@@ -397,3 +397,46 @@ $("button").bind("dblclick", function () {
   // TODO 执行双击操作
 });
 ```
+
+## new关键字
+
+```
+function FuncA(name) {
+    this.name = name;
+};
+var a = new FuncA('this is functon A');
+console.log(a.name); // 输出 this is functon A
+```
+
+new操作在背后做了如下操作。
+
+```
+// 创建一个object，假设叫x
+var x = {}; 
+// 把A.prototype赋给x.__proto__
+x.__proto__ = FuncA.prototype;
+// 调用A.call(x)
+var result = FuncA.call(x);
+// 如果result是对象则返回，否则返回空对象x
+if (typeof(result) === "object"){
+  return result;
+}
+return x;
+```
+
+因此也有：
+
+```
+function FuncB() {
+  return {
+    name: 'name'
+  };
+}
+var b = new FuncB();
+console.log(b.name); // 输出 name
+function FuncC() {
+  return 'name';
+}
+var c = new FuncC();
+console.log(c); // 输出 空对象
+```

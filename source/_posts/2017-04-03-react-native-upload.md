@@ -2,8 +2,8 @@
 title: React-Native-上传下载
 layout: post
 date: 2017-04-03 00:22:48
-categories: React-Native
-tags: React-Native
+categories: React Native
+tags: React Native
 ---
 
 ## 文件的上传下载[ react-native-fetch-blob](https://github.com/wkh237/react-native-fetch-blob)

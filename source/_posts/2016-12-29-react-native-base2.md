@@ -2,8 +2,8 @@
 title: React-Native-基础2
 layout: post
 date: 2016-12-29 07:51:49
-categories: React-Native
-tags: React-Native
+categories: React Native
+tags: React Native
 ---
 
 ## View组件

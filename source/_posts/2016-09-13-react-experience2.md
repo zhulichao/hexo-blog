@@ -75,4 +75,15 @@ render() {
 
 ```
 
+## 引用图片
 
+使用require静态资源，打包时会自动打入，不需要再处理静态资源。
+
+```
+<img src={require('../../resources/images/logo.png')} />
+```
+
+```
+const url = `url(${require("../../resources/images/banner-home.jpg")})`;
+<div style={{backgroundImage: url}} />
+```

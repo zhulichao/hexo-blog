@@ -147,14 +147,6 @@ webpack-dev-server  //启动一个小的express Web服务，8080端口
 
 ## 配置webpack-dev-server代理
 
-## 独立打包样式文件
-
-```
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
-plugins: [commonsPlugin, new ExtractTextPlugin("[name].css")],
-loaders:[{ test: /\.css$/, loader: ExtractTextPlugin.extract('style-loader', 'css-loader') }],
-```
-
 ## 自动编译并刷新页面
 
 index.html 放到 build/ 文件夹下  
@@ -170,6 +162,25 @@ entry: [
 当Webpack-dev-server在浏览器自动刷新下运行的时候，CSS也会自动更新，不过有点不同的是，当你改变了一个 CSS 文件，属于那个文件的标签会更新新的内容但不会刷新。  
 注意，访问带webpack-dev-server的url会自动刷新，直接访问localhost:8080的可能不刷新。
 
+## 独立打包样式文件
+
+```
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
+// webpack.config.js 中
+...
+plugins: [
+  ...
+  new ExtractTextPlugin("[name].css"), // 如果只有一个 style.css 就行
+],
+loaders:[
+  ...
+  { 
+    test: /\.less$/,
+    loader: ExtractTextPlugin.extract('style-loader', 'css-loader!less-loader',{ publicPath: './'})
+  },
+],
+```
+
 ## 分离应用和第三方
 
 当你的应用依赖其他库尤其是像 ReactJS 这种大型库的时候，你需要考虑把这些依赖分离出去，这样就能够让用户在你更新应用之后不需要再次下载第三方文件。记住要把这些文件都加入到你的 HTML 代码中，不然你会得到一个错误。
@@ -178,10 +189,28 @@ entry: {
     app: path.resolve(__dirname, 'app/main.js'),
     // 当 React 作为一个 node 模块安装的时候，
     // 我们可以直接指向它，就比如 require('react')
-    vendors: ['react']
+    vendors: ['react', 'react-dom', 'jquery']
 },
 plugins: [
+    ...
     new webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.js')
+]
+```
+
+## 代码压缩
+
+webpack打包后的文件可能会很大，生成环境应该去掉注释及依赖的copyright信息。
+```
+plugins: [
+  ...
+  new webpack.optimize.UglifyJsPlugin({
+    output: {
+      comments: false,
+    },
+    compress: {
+      warnings: false,
+    }
+  }),
 ]
 ```
 

@@ -2,8 +2,8 @@
 title: React-Native-Android使用高德地图
 layout: post
 date: 2017-03-24 23:08:46
-categories: React-Native
-tags: React-Native
+categories: React Native
+tags: React Native
 ---
 
 ## 高德地图key值
@@ -217,3 +217,51 @@ export default Amap;
 
 {% img https://zhulichao.github.io/2017/03/24/react-native-amap-android/mapError3.png 300 报错 %}
 {% img https://zhulichao.github.io/2017/03/24/react-native-amap-android/mapError4.png 缺少定位权限 %}
+
+## 配置签名后key值问题
+
+如果项目中配置了签名，参考RN官网，也就是在android/app/build.gradle中添加了如下代码：
+
+```
+...
+android {
+    ...
+    defaultConfig { ... }
+    signingConfigs {
+        release {
+            storeFile file(MYAPP_RELEASE_STORE_FILE)
+            storePassword MYAPP_RELEASE_STORE_PASSWORD
+            keyAlias MYAPP_RELEASE_KEY_ALIAS
+            keyPassword MYAPP_RELEASE_KEY_PASSWORD
+        }
+    }
+    buildTypes {
+        release {
+            ...
+            signingConfig signingConfigs.release
+        }
+    }
+}
+...
+```
+
+这时生成环境的高德key值需要根据签名中的SHA1值生成，打开cmd，切换到签名keystore文件所在目录，输入 `keytool -list -v -keystore xxx.keystore`命令即可查看SHA1值。由这个SHA1值生成的高德key值在发布环境是好使的。
+
+但是在开发环境会报key值不正确，首先的感觉是SHA1值是生成环境的，那再根据开发环境SHA1值生成key值试一次，打开出cmd，`cd .android` 进入到 .android下，输入`keytool -v -list -keystore debug.keystore`命令即可查看开发SHA1值，但仍然报key值不正确。在网上查原因是由于配置了发布签名导致的，需要修改android/app/build.gradle文件让开发环境使用相同的签名配置，这样可以开发和生成环境使用同一个高德key值。
+
+```
+signingConfigs {
+    release {
+        storeFile file(MYAPP_RELEASE_STORE_FILE)
+        storePassword MYAPP_RELEASE_STORE_PASSWORD
+        keyAlias MYAPP_RELEASE_KEY_ALIAS
+        keyPassword MYAPP_RELEASE_KEY_PASSWORD
+    }
+    debug {
+        storeFile file(MYAPP_RELEASE_STORE_FILE)
+        storePassword MYAPP_RELEASE_STORE_PASSWORD
+        keyAlias MYAPP_RELEASE_KEY_ALIAS
+        keyPassword MYAPP_RELEASE_KEY_PASSWORD
+    }
+}
+```

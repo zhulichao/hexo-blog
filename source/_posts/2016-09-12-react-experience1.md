@@ -442,3 +442,5 @@ ReactDOM.render(
 ```
 
 {% img https://zhulichao.github.io/2016/09/12/react-experience1/null.png getChildContext返回name为null %}
+
+在使用中发现了一个问题，在一个组件提供的context值改变时，使用这个值的子节点并没有接受到context的改变，没有达到要跨级共享数据的效果。网上说可以在这个提供context组件值改变时执行setState这样就会更新了，但通常使用context都是在组件顶层，这样进行整个重新渲染感觉不太好。

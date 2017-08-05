@@ -90,3 +90,5 @@ tags: 前端知识
 ## React Native
 
 《React Native 跨平台移动应用开发》
+《React Native 入门与实战》
+《React Native 开发指南》

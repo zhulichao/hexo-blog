@@ -34,6 +34,44 @@ react-native init ProjectName --version 0.42.0 初始化指定版本react-native
 
 针对IOS项目名称修改的方法还未找到？
 
+## android启动图标
+
+- /android/app/src/main/res/mipmap-hdpi目录下，替换ic_launcher.png图片，72×72
+- /android/app/src/main/res/mipmap-mdpi目录下，替换ic_launcher.png图片，48×48
+- /android/app/src/main/res/mipmap-xhdpi目录下，替换ic_launcher.png图片，96×96
+- /android/app/src/main/res/mipmap-xxhdpi目录下，替换ic_launcher.png图片，144×144
+
+## android首屏背景
+
+- /android/app/src/main/res/drawable-hdpi目录下，添加png图片
+- /android/app/src/main/res/drawable-mdpi目录下，添加png图片
+- /android/app/src/main/res/drawable-xhdpi目录下，添加png图片
+- /android/app/src/main/res/drawable-xxhdpi目录下，添加png图片
+
+/android/app/src/main/res/values/styles.xml
+```
+<style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <!-- 这里将刚刚那张图片设置为背景图片， splash对应图片名称 -->
+    <item name="android:windowBackground">@drawable/splash</item>
+</style>
+```
+
+## android项目版本号修改
+
+/android/app/目录下修改build.gradle文件：
+
+```
+...
+android {
+  ...
+  defaultConfig {
+    ...
+    varsionName "1.1" // 打包后apk的版本
+  }
+}
+...
+```
+
 ## 启动项目
 
 react-native run-android 在android启动项目，如果运行在真机，需要摇晃手机调出开发者菜单->Dev Settings->Debug server host for device，进行IP和端口的设置。
@@ -42,7 +80,7 @@ react-native run-ios 在ios启动项目。
 
 无论是运行上面哪个命令，都会打开一个启动package服务的命令行窗口，如果没有打开这个窗口，请用react-native start手动启动package服务，react-native start --port XXXX 开启服务的时候直接指定端口号。
 
-## 如何使用Ant Design Mobile
+## 如何使用 Ant Design Mobile
 
 - `npm install antd-mobile --save`  
 - `npm install babel-plugin-import --save-dev`
@@ -79,7 +117,9 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 ## 如何设置样式
 
-StyleSheet提供了一种类似CSS样式表的抽象。const styles = StyleSheet.create()传入样式定义的对象，该对象键为样式名称，值为定义样式的对象。使用时通过styles的键名即可引用到对应的样式。
+StyleSheet提供了一种类似CSS样式表的抽象。const styles = StyleSheet.create()传入样式定义的对象，该对象键为样式名称，值为定义样式的对象。使用时通过styles的键名即可引用到对应的样式。也可以使用内联样式，但比较低效，内联样式对象会在每一个渲染周期都被重新创建。
+
+Stylesheet.Create方法是可选的，但有一些重要的优势。它保证了值是不可变的，并且通过将它们转换成指向内部表的纯数字，保持了代码的不透明性。将它们放在文件的末尾可保证它们在应用中只会被创建一次，而不是每一次渲染周期都被重新创建。
 
 我在RN工程中定义了styles目录，将每个组件引用的样式单独定义成组件同名的文件放在该目录，想要做到样式独立管理，但有些样式可能是根据组件中的一些属性定义的，还是不可避免的要放到组件定义的文件中。
 
@@ -386,14 +426,16 @@ async agreeHandler(data) {
 
 在Android上连续两个R键可进行刷新，ctrl+M可打开调试菜单，可以选择Debug JS Remotely启动浏览器的调试工具进行调试，主要是使用console.log打印日志或是debugger进行断点查看。
 
+当你加载了开启Chrome调试工具的React Native应用之后，Google的Chrome浏览器便会通过React Native包管理器使用一个标准的`<script>`标签来执行相同的JavaScript代码，因此你可以拥有一个基于浏览器的调试器。随后，包管理器使用WebSocket进行设备与浏览器之间的通信。
+
 如果Packager的控制台编译未完成或模拟器报Unexpected token，很有可能是存在语法错误。
 
-{% img https://zhulichao.github.io/2016/11/30/react-native-base/UnexpectedToken.png 模拟器中错误 %}
+{% img https://zhulichao.github.io/2016/11/30/react-native-base/UnexpectedToken.png 300 模拟器中错误 %}
 
 如果模拟器报如下错误，不容易定位到哪里发生了错误，打开浏览器调试工具->Network，点击显示红色的请求，Preview里面错误信息。
 
-{% img https://zhulichao.github.io/2016/11/30/react-native-base/debugger1.png 模拟器中错误 %}
-{% img https://zhulichao.github.io/2016/11/30/react-native-base/debugger2.png 浏览器中错误 %}
+{% img https://zhulichao.github.io/2016/11/30/react-native-base/debugger1.png 300 模拟器中错误 %}
+{% img https://zhulichao.github.io/2016/11/30/react-native-base/debugger2.png 300 浏览器中错误 %}
 
 如果模拟器报如下错误，哪里都不要改，重新执行`react-native run-android`重新启动，直到启起来。
 
@@ -497,11 +539,34 @@ output:{
 
 在一个目录下执行react-native init project_name 初始化了一个项目，能跑起来。但换个目录再执行 react-native init project_name 初始化同名项目，即使什么都没修改，也可能跑不起来，会报如下错误。但换个目录可能就能跑起来了，很奇怪。
 
-{% img https://zhulichao.github.io/2016/11/30/react-native-base/start.png 启动报错 %}
+{% img https://zhulichao.github.io/2016/11/30/react-native-base/start.png 300 启动报错 %}
 
 在网上查了很多都没有找到原因，github上也有人发现类似问题。
 
 {% img https://zhulichao.github.io/2016/11/30/react-native-base/init.png 类似错误 %}
+
+这时请确认是否使用了**babel-plugin-transform-runtime**依赖及使用是否正确，很有可能是这个依赖导致的，如果没用可以去掉。我在去掉之后再没有发现这个问题。
+
+## 项目启动报错
+
+如果项目启动时报`Could not find com.atlassian.mobile.video:okhttp-ws-compat:3.7.0-atlassian1.`错误，在android/build.gradle文件中，allprojects中添加如下代码即可。
+
+```
+...
+allprojects {
+  repositories {...}
+  configurations.all {
+    resolutionStrategy {
+        eachDependency { DependencyResolveDetails details ->
+            if (details.requested.group == 'com.facebook.react' && details.requested.name == 'react-native') {
+                details.useVersion "0.42.0" // Your real React Native version here
+            }
+        }
+    }
+  }
+}
+...
+```
 
 ## 平台扩展名及平台检测
 

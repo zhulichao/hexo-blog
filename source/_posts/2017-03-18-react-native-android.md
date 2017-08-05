@@ -2,8 +2,8 @@
 title: React-Native-Android原生
 layout: post
 date: 2017-03-18 13:20:45
-categories: React-Native
-tags: React-Native
+categories: React Native
+tags: React Native
 ---
 
 ## [创建Android模块](http://reactnative.cn/docs/0.42/native-modules-ios.html#content)

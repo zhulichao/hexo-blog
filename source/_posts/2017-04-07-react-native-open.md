@@ -2,8 +2,8 @@
 title: React-Native-打开文件
 layout: post
 date: 2017-04-07 16:32:03
-categories: React-Native
-tags: React-Native
+categories: React Native
+tags: React Native
 ---
 
 ## 本地应用打开文件  [react-native-file-opener](https://github.com/huangzuizui/react-native-file-opener)
