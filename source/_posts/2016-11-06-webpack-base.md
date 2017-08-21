@@ -30,15 +30,15 @@ Webpack中涉及路径配置最好使用绝对路径，建议通过`path.resolve
 
 **特点：**
 
-- 代码拆分、Loader、智能解析、插件系统、快速运行。 
- 
+- 代码拆分、Loader、智能解析、插件系统、快速运行。
+
 **优点:**  
 
 - webpack 是以 commonJS 的形式来书写脚本的，但对 AMD/CMD 的支持也很全面  
 - 直接使用 require(XXX) 的形式来引入各模块，即使它们可能需要经过编译  
 - 能被模块化的不仅仅是 JS 了  
 - 开发便捷，比如打包、压缩混淆、图片转base64等  
-- 扩展性强，插件机制完善，特别是支持 React 热插拔（见 react-hot-loader ） 
+- 扩展性强，插件机制完善，特别是支持 React 热插拔（见 react-hot-loader ）
 - 可以使用别名（alias），简化require中的内容  
 - 支持多入口  
 
@@ -117,7 +117,7 @@ Webpack中涉及路径配置最好使用绝对路径，建议通过`path.resolve
 - debug：加载器(loader)转换到调试模式。  
 - catch：缓存生成的模块，watch 模式下默认就是启动的。  
 
-[常用Loader](http://webpack.github.io/docs/list-of-loaders.html) 
+[常用Loader](http://webpack.github.io/docs/list-of-loaders.html)
 [常用plugin](http://webpack.github.io/docs/list-of-plugins.html)
 
 **常用命令:**
@@ -174,7 +174,7 @@ plugins: [
 ],
 loaders:[
   ...
-  { 
+  {
     test: /\.less$/,
     loader: ExtractTextPlugin.extract('style-loader', 'css-loader!less-loader',{ publicPath: './'})
   },
@@ -435,3 +435,5 @@ module.exports = {
   }
 };
 ```
+
+## css去重

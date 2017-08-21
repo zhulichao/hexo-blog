@@ -132,5 +132,19 @@ Backbone 框架
 
 ES6: 对象的扩展
      async await
+     整个还得好好看看，练习练习
 
 Fireworks
+
+https://segmentfault.com/q/1010000003733773
+
+Facebook前段时间发布的Prepack，js代码优化工具。
+standard作为基准规范。
+
+ajax 需要熟练使用并研究原理
+
+dom ready http://www.jianshu.com/p/88b9d3874749
+
+react this http://www.jianshu.com/p/04fa4cc60962
+
+事件 http://lib.csdn.net/article/javascript/6265?knId=505

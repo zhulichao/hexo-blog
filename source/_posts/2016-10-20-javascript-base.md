@@ -6,7 +6,7 @@ categories: JavaScript
 tags: JavaScript
 ---
 
-JavaScript是单线程、基于原型、面向对象、弱类型的动态脚本语言。数据类型包括：字符串、数字、布尔、数组、对象、Null、Undefined、Symbol。
+JavaScript是单线程、基于原型、面向对象、弱类型的动态脚本语言。6种数据类型，其中包括5个基本数据类型：String、Number、Boolean、Null、Undefined，1个复杂数据类型：Object。
 [JavaScript API](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript)
 
 ## typeof
