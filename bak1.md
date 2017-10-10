@@ -1,4 +1,4 @@
-{% img https://zhulichao.github.io/2017/07/08/javascript-base2/继承.png 继承 %}
+{% img https://zhulichao.github.io/2017/08/31/findjob-algorithm/CompleteBinaryTree.png 完全二叉树 %}
 
 ---
 
@@ -126,8 +126,6 @@ https://nei.netease.com
 
 Backbone 框架
 
-江西天然气封装类库
-
 学习命令行操作git
 
 ES6: 对象的扩展
@@ -148,3 +146,41 @@ dom ready http://www.jianshu.com/p/88b9d3874749
 react this http://www.jianshu.com/p/04fa4cc60962
 
 事件 http://lib.csdn.net/article/javascript/6265?knId=505
+
+react官网
+react-native官网
+
+---
+
+# 问
+
+生育保险报生育时候的生育津贴
+报1400的产前检查费，产前检查的收据都留着
+二次报销，产检费拢共5000多吧，扣掉1400，还有3600左右
+工作内容，之后的工作、发展方向有没有计划
+合同、违约金
+
+# 想
+
+数据分析，数据可视化，BI
+unity3d+gis 使用游戏引擎渲染
+深入业务，将技术与业务结合
+
+# 一定要提升
+
+jhipster ：http://www.jhipster.tech/ 微服务，基于spring cloud
+
+技术敏感度，关注新闻、技术的更新
+
+angular、vue、react，Web Component
+
+提升前端技术能力，前端基础
+
+react与UI人员调整样式这，UI人员不好调整样式
+
+逐渐形成自己的技术体系，html、css、JavaScript基础，jQuery也要学，再学框架原理，后端语言
+
+咔咔买房，区块链，比特币，社区
+
+http://www.jianshu.com/p/5e86a793fb3d
+

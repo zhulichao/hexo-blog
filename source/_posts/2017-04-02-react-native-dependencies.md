@@ -20,7 +20,7 @@ tags: React Native
 {% img https://zhulichao.github.io/2017/04/02/react-native-dependencies/ios-map.jpg 300 高德地图 %}
 [react-native-smart-amap-location](https://github.com/react-native-component/react-native-smart-amap-location) 高德定位
 {% img https://zhulichao.github.io/2017/04/02/react-native-dependencies/location.jpg 300 高德定位 %}
-[react-native-fetch-blob](https://github.com/wkh237/react-native-fetch-blob) 打开文件
+[react-native-file-opener](https://github.com/huangzuizui/react-native-file-opener) 打开文件
 {% img https://zhulichao.github.io/2017/04/02/react-native-dependencies/open.jpg 300 打开文件 %}
 [react-native-fetch-blob](https://github.com/wkh237/react-native-fetch-blob) 文件上传下载
 {% img https://zhulichao.github.io/2017/04/02/react-native-dependencies/file.gif 300 文件上传下载 %}

@@ -85,7 +85,7 @@ a instanceof Array
 
 array.push() -- 将一个或多个新元素添加到数组结尾，返回数组新长度  
 array.unshift() -- 将一个或多个新元素添加到数组开始，返回数组新长度  
-array.splice(pos, count, item1, ..., itemN) -- 删除从第一个数为起始、第二个参数为个数的这些元素后，在被截取掉的地方追加一个或多个从第三个参数开始的新元素，操作数组本身  
+array.splice(start, count, item1, ..., itemN) -- 删除从第一个数为起始、第二个参数为个数的这些元素后，在被截取掉的地方追加一个或多个从第三个参数开始的新元素，操作数组本身  
 array.pop() -- 移除最后一个元素并返回该元素值  
 array.shift() -- 移除最前一个元素并返回该元素值
 array.slice(start, end) -- 返回第一个参数起始、第二个参数截至、左闭右开的数组，不操作数组本身  
@@ -101,8 +101,96 @@ array.filter(function(item, index, array){}) -- 对数组的每一个元素进�
 array.forEach(function(item,index,array){}) -- 对数组的每一个元素进行函数的运行  
 array.map(function(item,index,array){}) -- 对数组的每一个元素进行函数的运行，把函数每次运行的结果按序组成的新数组返回  
 array.reduce(function(prev,cur,index,array){}) -- 调用一个函数，pre为上一次调用回调返回的值或者是提供的初始值，第二个参数为当前被处理的元素，第三个参数为当前位置，第四个参数为数组，依次将每次调用的结果替换掉数据中的元素，最后返回一个值  
+```
+var arr = [0, 1 ,2 ,3 ,4 ,5 ,6 ,7 ,8 ,9]; // [0, 1 ,2 ,3 ,4 ,5 ,6 ,7 ,8 ,9]
+arr.push(10, 11); // 返回12， [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+arr.unshift(-2, -1); // 返回14，[-2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+arr.pop(); // 返回11，[-2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+arr.pop(); // 返回10，[-2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+arr.shift(); // 返回-2，[-1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+arr.shift(); // 返回-1，[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+arr.slice(1, 3); // 返回[1, 2]，[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+arr.splice(1, 2, 11, 12); // 返回[1, 2]，[0, 11, 12, 3, 4, 5, 6, 7, 8, 9]
+arr.splice(1, 2, 1, 2, 3); // 返回[11, 12]，[0, 1, 2, 3, 3, 4, 5, 6, 7, 8, 9]
+arr.splice(3, 1); // 返回[3]，[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+arr.concat([-2, -1]); // 返回[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, -2, -1]，[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+function sortFun(a, b) {
+  return a - b;
+}
+arr.sort(sortFun); // 返回[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]，[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+arr.reverse(); // 返回[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]，[9, 8, 7, 6, 5, 4, 3, 3, 2, 1, 0]
+arr.reduce(function(prev, cur, index, array){return prev + cur;}); // 返回45
+arr.reduce(function(prev, cur, index, array){return prev + cur;}, 1); // 返回46
+```
 
 [详见Array API](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array)
+
+## String API
+
+String.fromCharCode(num1, ..., numN) -- 返回使用指定的Unicode值序列创建的字符串
+String.raw(callSite, ...substitutions) -- 获取一个模板字符串的原始字面量值的，callSite是一个模板字符串，substitutions表示任意个内插表达式对应的值
+str.charAt(index) -- 返回指定位置的字符
+str.charCodeAt(index) -- 返回指定位置字符的UTF-16代码单元值的数字
+str.concat(str2, ..., strN) --返回原字符串拼接一个或多个字符串的新字符串
+str.slice(start, end) -- 返回start开始、end结束、左闭右开的字符串
+str.substring(start, end) -- 返回较小值开始、较大值结束、左闭右开的字符串
+str.substr(start, count) -- 返回start开始的count个字符组成的字符串
+str.includes(searchStr[, position]) -- 判断从position位置开始包含position是否存在searchStr字符串
+str.indexOf(searchValue[, fromIndex]) -- 返回从fromIndex开始第一次出现searchValue的位置索引，没有返回-1
+str.lastIndexOf(searchValue[, fromIndex]) -- 返回从fromIndex从后向前查找，第一次出现searchValue的位置索引，没有返回-1
+str.localeCompare() -- 返回一个数字(1或-1或0)来指示一个参考字符串是否在排序顺序在前面或后面或与给定字符串相同
+str.repeat() -- 返回包含被连接在一起的指定数量的字符串的副本
+str.match(regexp) --  返回一个包含了整个匹配结果以及任何括号捕获的匹配结果的 数组，如果没有匹配返回null
+str.replace(regexp|substr, newSubStr|function) -- 返回一个由替换值替换一些或所有匹配的模式后的新字符串，模式可以是一个字符串或者一个正则表达式，function返回值将替换掉第一个参数匹配到的结果
+str.search(regexp) -- 执行正则表达式和String对象之间的一个匹配搜索的索引，没有返回-1
+str.trim() -- 返回删除两端空白字符的字符串
+str.trimLeft() -- 返回删除左端空白字符的字符串
+str.trimRight() -- 返回删除右端空白字符的字符串
+str.toLocaleLowerCase() -- 返回使用本地化映射规则将字符串转化成小写形的式
+str.toLocaleUpperCase() -- 返回使用本地化映射规则将字符串转化成大写的形式
+str.toLowerCase() -- 返回将字符串转化成小写的形式
+str.toUpperCase() -- 返回将字符串转化成大写的形式
+str.toString() -- 返回指定对象的字符串形式
+str.valueOf() -- 返回一个String对象的原始值
+str.split([separator[, limit]]) -- 返回使用separator分隔字符串组成的数组，limit限定返回的分割片段数量
+
+```
+var str = 'abcdefghijklmnopqrstuvwxyz';
+var str2 = String.fromCharCode(65, 66, 67); // 返回ABC
+String.raw `Hi\n!`; // 返回'Hi\n!'
+str.charAt(3); // 返回'd'
+str.charCodeAt(3); // 返回100
+str.concat(str2); // 返回'abcdefghijklmnopqrstuvwxyzABC'
+str.slice(1,5); // 返回'bcde'
+str.substring(1, 3); // 返回'bc'
+str.substring(3, 1); // 返回'bc'
+str.substr(1, 3); // 返回'bcd'
+str.includes('xyz'); // 返回true
+str.includes('xyz', 24); // 返回false
+str.indexOf('xyz'); // 返回23
+str.indexOf('xyz', 24); // 返回-1
+'check'.localeCompare('against'); // 返回1
+'against'.localeCompare('check'); // 返回-1
+'check'.localeCompare('check'); // 返回0
+str.repeat(2); // 返回'abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz'
+var str3 = 'number in number';
+str3.match('n'); // 返回["n", index: 0, input: "number in number"]
+str3.match(/n/); // 返回["n", index: 0, input: "number in number"]
+str3.match(/n/g); // 返回["n", "n", "n"]
+str.replace('abc', '123'); // 返回'123defghijklmnopqrstuvwxyz'
+str.replace('abc', () => '123'); // 返回'123defghijklmnopqrstuvwxyz'
+str.search('b'); // 返回1
+str.toLocaleLowerCase(); // 返回'abcdefghijklmnopqrstuvwxyz'
+str.toLocaleUpperCase(); // 返回'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+str.toLowerCase(); // 返回'abcdefghijklmnopqrstuvwxyz'
+str.toUpperCase(); // 返回'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+var num = 1234;
+num.toString(); // 返回'1234'
+'a|b|c|d|e|f|'.split('|'); // 返回 ["a", "b", "c", "d", "e", "f", ""]
+'a|b|c|d|e|f|'.split('|', 3); // 返回 ["a", "b", "c"]
+```
+
+[详见String API](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String)
 
 ## Object.freeze(浅冻结)
 
@@ -169,7 +257,7 @@ bind -- fun.bind(context, arg1, ... , argn)
 
 ### 作用域
 
-就是变量与函数的可访问范围，即作用域控制着变量与函数的可见性和生命周期。在JavaScript中，变量的作用域有全局作用域和局部作用域两种。  
+作用域就是变量与函数的可访问范围，即作用域控制着变量与函数的可见性和生命周期。在JavaScript中，变量的作用域有全局作用域和局部作用域两种。  
 
 全局作用域：
 > 在代码中任何地方都能访问到的对象拥有全局作用域
@@ -185,6 +273,34 @@ bind -- fun.bind(context, arg1, ... , argn)
 
 在JavaScript中，函数也是对象。函数对象和其它对象一样，拥有可以通过代码访问的属性和一系列仅供JavaScript引擎访问的内部属性。其中一个内部属性是[[Scope]]，由ECMA-262标准第三版定义，该内部属性包含了函数被创建的作用域中对象的集合，这个集合被称为函数的作用域链，它决定了哪些数据能被函数访问。
 
+```
+var g = '全局变量';
+var f1 = function() {
+  debugger;
+  var part1 = '局部变量1';
+  var f2 = function() {
+    debugger;
+    var part2 = '局部变量2';
+  }
+  f2();
+}
+f1();
+
+
+var g = '全局变量';
+function f1() {
+  debugger;
+  var part1 = '局部变量1';
+  function f2() {
+    debugger;
+    var part2 = part1;
+  }
+  f2();
+}
+
+f1();
+```
+
 在函数执行时，会创建一个称为“运行期上下文(execution context)”的内部对象，运行期上下文定义了函数执行时的环境。每个运行期上下文都有自己的作用域链，用于标识符解析，当运行期上下文被创建时，而它的作用域链初始化为当前运行函数的[[Scope]]所包含的对象。这些值按照它们出现在函数中的顺序被复制到运行期上下文的作用域链中。它们共同组成了一个新的对象，叫“活动对象(activation object)”，该对象包含了函数的所有局部变量、命名参数、参数集合以及this，然后此对象会被推入作用域链的前端，当运行期上下文被销毁，活动对象也随之销毁。
 
 在函数执行过程中，每遇到一个变量，都会经历一次标识符解析过程以决定从哪里获取和存储数据。该过程从作用域链头部，也就是从活动对象开始搜索，查找同名的标识符，如果找到了就使用这个标识符对应的变量，如果没找到继续搜索作用域链中的下一个对象，如果搜索完所有对象都未找到，则认为该标识符未定义。
@@ -195,7 +311,29 @@ bind -- fun.bind(context, arg1, ... , argn)
 
 ## [闭包](http://www.ruanyifeng.com/blog/2009/08/learning_javascript_closures.html)
 
-Javascript语言，函数内部可以直接读取全局变量，在函数外部自然无法读取函数内的局部变量。如果要得到函数f1内的局部变量，就需要在函数f1的内部，再定义一个函数f2，f2可以读取f1中的局部变量，只要把f2返回，就可以在f1外部读取它的内部变量了。**这样的f2函数，就是闭包。**注意，f1是f2的父函数，而f2被赋给了一个全局变量，这导致f2始终在内存中，而f2的存在依赖于f1，因此f1也始终在内存中，不会在调用结束后，被垃圾回收机制（garbage collection）回收。
+Javascript语言，函数内部可以直接读取全局变量，在函数外部无法读取函数内的局部变量。如果要得到函数f1内的局部变量，就需要在函数f1的内部，再定义一个函数f2，f2可以读取f1中的局部变量，只要把f2返回，就可以在f1外部读取它的内部变量了。**这样的f2函数，就是闭包。**注意，f1是f2的父函数，而f2被赋给了一个全局变量，这导致f2始终在内存中，而f2的存在依赖于f1，因此f1也始终在内存中，不会在调用结束后，被垃圾回收机制（garbage collection）回收。
+```
+// 函数内部可以直接读取全局变量，在函数外部无法读取函数内的局部变量
+var g = '全局变量';
+function f1() {
+  console.log(g);
+  var part = '局部变量';
+}
+// part is not defined
+console.log(part);
+
+// 使用闭包
+function f1() {
+  var part = '局部变量';
+  function f2() {
+    return part;
+  }
+  return f2;
+}
+var res1 = f1();
+var partW = res1();
+console.log(partW);
+```
 
 闭包可以用在许多地方，它的最大用处有两个：一个是前面提到的可以读取函数内部的变量，另一个就是让这些变量的值始终保持在内存中。
 

@@ -98,9 +98,22 @@ const Global = StyleSheet.create({
 });
 ```
 
+- NetInfo.fetch() 为unknown
+
+```
+componentWillMount() {
+  //如果不侦听网络状态变化，NetInfo.fetch()一直是unknown
+  NetInfo.isConnected.addEventListener('change', () => {});
+}
+```
+
 ## React Native 连接原生
 
 由于之前是使用Windows在Android上开发的，使用到的依赖
 react-native-vector-icons、react-native-image-picker需要与IOS原生连接，此时如果执行`react-native link`自动连接，担心会影响到已有的Android端的配置，因为Android是进行手动连接的，执行自动连接没有生效，而且也会将不需要连接的依赖一起连接了。所以想按照说明文档进行手动连接，但试过后并没有好使，即使是新初始化的项目，react-native-vector-icons在IOS上进行手动连接也是不好使的。后来我是新初始化了一个同名项目，安装完react-native-vector-icons、react-native-image-picker依赖后进行自动连接，运行好使了，我就把新项目与原项目ios目录中的文件进行了对比，将配置移到原项目中，运行后好使了。
 
 过了两天发现这种方式有点傻，因为那时不知道`react-native link`可以指定手动连接的依赖。虽然没有试验，但是感觉只需要单独执行`react-native link react-native-vector-icons`和`react-native link react-native-image-picker`，再将android目录下变化的文件恢复，应该就可以了。
+
+## 打包ipa
+
+在Xcode中，修改好Version和Build后，运行设备选择 Generic iOS Device， Product -> archive，等待 Window -> Organizer 弹出，点击Export，Select a method for export 选择 Save for Enterprise Deployment，Device Support 选择 Export one app for all compatible devices，Summary 不勾选，next 导出 ipa。

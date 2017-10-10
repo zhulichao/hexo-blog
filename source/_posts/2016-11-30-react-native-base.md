@@ -43,10 +43,10 @@ react-native init ProjectName --version 0.42.0 初始化指定版本react-native
 
 ## android首屏背景
 
-- /android/app/src/main/res/drawable-hdpi目录下，添加png图片
-- /android/app/src/main/res/drawable-mdpi目录下，添加png图片
-- /android/app/src/main/res/drawable-xhdpi目录下，添加png图片
-- /android/app/src/main/res/drawable-xxhdpi目录下，添加png图片
+- /android/app/src/main/res/drawable-hdpi目录下480×800，添加png图片
+- /android/app/src/main/res/drawable-mdpi目录下320×480，添加png图片
+- /android/app/src/main/res/drawable-xhdpi目录下720×1280，添加png图片
+- /android/app/src/main/res/drawable-xxhdpi目录下1080×1920，添加png图片
 
 /android/app/src/main/res/values/styles.xml
 ```

@@ -101,6 +101,7 @@ Webpack中涉及路径配置最好使用绝对路径，建议通过`path.resolve
         }
     };
 ```
+
 - context：处理entry选项时的基础路径（绝对路径），默认值为process.cmd()，即webpack.config.js文件所在路径。  
 - entry：配置入口文件，值可以是字符串、数组、对象；字符串指定的模块在项目程序启动的时候加载；字符串数组指定的所有模块被当做一个模块集，在项目程序启动的时候都会加载，数组最后一个元素作为模块集输出；对象的每个属性名作为模块集的名称，属性值可以是字符串和字符串数组。这个配置可用于实现非单页的程序，程序会有多个启动入口。  
 - output.filename：打包后的文件名 '[name].js'，表示name为对应entry的键。  
@@ -108,11 +109,11 @@ Webpack中涉及路径配置最好使用绝对路径，建议通过`path.resolve
 - output.publicPath：网站运行时的访问路径，比如publicPath为"/test"，访问localhost:8080/test/bundle.js可访问编译后的文件。  
 - module.loaders：值为一个数组，数组的每一个元素是一个对象，对象里可有text、exclude、loader以“！”分隔多个loader的string、loaders是一个字符串数组；加载器配置，以处理非javascript类型的模块，都需要先安装。  
 - module.noParse：值为一个数组，声明这个模块不需要parse查找依赖，忽略对已知文件的解析。告诉当webpack尝试去解析压缩文件时，这种行为是不允许的。  
-- plugins：值为一个数组，new webpack.optimize.CommonsChunkPlugin('common.js')表示提取多个入口文件的公共脚本部分生成一个 common.js。注意引入时先引入common.js，再引入index.s。如压缩打包的文件(UglifyJsPlugin)、允许错误不打断程序等。  
+- plugins：值为一个数组，`new webpack.optimize.CommonsChunkPlugin('common.js')`表示提取多个入口文件的公共脚本部分生成一个 common.js。注意引入时先引入common.js，再引入index.s。如压缩打包的文件(UglifyJsPlugin)、允许错误不打断程序等。  
 - resolve.root：绝对路径，查找module的话从这里开始查找。添加默认搜索路径。  
 - resolve.extensions：自动扩展文件后缀名，意味着我们require模块可以省略不写后缀名。  
 - resolve.alias：模块别名定义，方便后续直接引用别名，无须多写长长的地址；告诉webpack，当引入react时，试图去匹配压缩过的react。  
-- externals：当我们想在项目中require一些其它的类库或者API，而又不想让这些类库的源码被构建到运行时文件中，这在实际开发中很有必要。externals: {"jquery": "jQuery"}，这样我们就可以放心的在项目中使用这些API了：var jQuery = require("jquery")。如果你想将react分离，不打包到一起，可以使用externals。然后用<script>单独将react引入。  
+- externals：当我们想在项目中require一些其它的类库或者API，而又不想让这些类库的源码被构建到运行时文件中，这在实际开发中很有必要。`externals: {"jquery": "jQuery"}`，这样我们就可以放心的在项目中使用这些API了：`var jQuery = require("jquery")`。如果你想将react分离，不打包到一起，可以使用externals。然后用`<script>`单独将react引入。  
 - devtool：就是生成sourcemap的不同方式，eval不支持IE8，推荐用source-map，开发环境常用eval-source-map。  
 - debug：加载器(loader)转换到调试模式。  
 - catch：缓存生成的模块，watch 模式下默认就是启动的。  
@@ -178,6 +179,23 @@ loaders:[
     test: /\.less$/,
     loader: ExtractTextPlugin.extract('style-loader', 'css-loader!less-loader',{ publicPath: './'})
   },
+],
+```
+
+## CSS压缩、去重
+
+```
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+// webpack.config.js 中
+...
+plugins: [
+  ...
+  new OptimizeCssAssetsPlugin({
+    assetNameRegExp: /\.css$/g,
+    cssProcessor: require('cssnano'),
+    cssProcessorOptions: { discardComments: {removeAll: true } },
+    canPrint: true
+  }),
 ],
 ```
 
@@ -282,7 +300,8 @@ $ webpack-dev-server
 
 ## 代码分割
 
-方式一  
+方式一
+
 使用`require.ensure`定义一个分割点，`require.ensure`会告诉webpack被引入的文件要编译成单独的文件，与编译输出文件bundle.js分开，index.html和weback.config.js都不需要修改。从表面上也看不出有什么不同，实际上webpack把main.js和a.js编译成不同的块bundle.js和1.bundle.js，并在bundle.js需要1.bundle.js时才加载。
 
 ```javascript
@@ -319,7 +338,20 @@ module.exports = {
 };
 ```
 
-方式二  
+如果要配合react-router使用，示例如下：
+```
+const app = (location, callback) => {
+    require.ensure([], require => {
+        callback(null, require('./containers/App').default)
+    }, 'app')
+};
+...
+<Route getComponent={app} />
+...
+```
+
+方式二
+
 使用`bundle-loader`
 
 ```javascript
@@ -401,10 +433,13 @@ module.exports = {
 
 ## 热模块替换
 
-方式一  
+方式一
+
 启动命令添加参数  
 `webpack-dev-server --hot --inline`  
-方式二  
+
+方式二
+
 修改webpack.config.js文件，添加HotModuleReplacementPlugin插件，修改entry  
 ```javascript
 var webpack = require('webpack');
@@ -436,4 +471,3 @@ module.exports = {
 };
 ```
 
-## css去重

@@ -449,7 +449,10 @@ function Class(options) {
         // 继承基类
         // 不能使用 Child.prototype = this.prototype; 这样extends添加的方法会影响到基类
         var F = function() {
-            // 这是定义F函数的原因
+            /*
+            这是定义F函数的原因，如果不显示定义constructor的指向，constructor将指向Object，通过constructor已经无法确定对象的类型了。
+            这样显示定义constructor属性的在实例中是可枚举的。
+            */
             this.constructor = Child;
         };
         F.prototype = this.prototype;// 继承

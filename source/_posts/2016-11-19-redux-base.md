@@ -177,7 +177,25 @@ store.dispatch(fetchPosts('reactjs')).then(() =>
 ```
 这样的处理，就解决了自动发送第二个Action的问题。但是，又带来了一个新的问题，Action是由store.dispatch方法发送的，而store.dispatch方法正常情况下，参数只能是对象，不能是函数。这时，就要使用中间件redux-thunk，改造store.dispatch，使得后者可以接受函数作为参数。
 
-方式一：redux-promise
+redux-thunk 的实现非常简单：
+```
+function createThunkMiddleware(extraArgument) {
+  return ({ dispatch, getState }) => next => action => {
+    if (typeof action === 'function') {
+      return action(dispatch, getState, extraArgument);
+    }
+
+    return next(action);
+  };
+}
+
+const thunk = createThunkMiddleware();
+thunk.withExtraArgument = createThunkMiddleware;
+
+export default thunk;
+```
+
+方式二：redux-promise
 
 另一种异步操作的解决方案，就是让Action Creator返回一个Promise对象。这就需要使用redux-promise中间件，这个中间件使得store.dispatch方法可以接受Promise对象作为参数。  
 ```

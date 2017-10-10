@@ -46,7 +46,7 @@
       {% if hasSearch %}
         <li class="menu-item menu-item-search">
           {% if theme.swiftype_key %}
-            <a href="#" class="st-search-show-outputs">
+            <a href="#" class="popup-trigger">
           {% elseif config.search %}
             <a href="#" class="popup-trigger">
           {% endif %}

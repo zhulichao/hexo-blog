@@ -58,6 +58,11 @@ tags: 前端知识
 
 ## NPM
 
+## 其它
+
+《Web全栈工程师的自我修养》
+《哈佛情商课:献给奋斗中的你》
+
 ...
 
 ## Webpack
@@ -85,10 +90,12 @@ tags: 前端知识
 
 ---
 
-# 移动前端知识
+# 移动端知识
 
 ## React Native
 
 《React Native 跨平台移动应用开发》
 《React Native 入门与实战》
 《React Native 开发指南》
+《Objective-C编程》
+《Objective-C高级编程:iOS与OSX多线程和内存管理》
