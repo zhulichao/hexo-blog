@@ -8,7 +8,7 @@ tags: 前端知识
 
 # Web前端知识
 
-## 博客
+## 参考博客
 
 [阮一峰的网络日志](http://www.ruanyifeng.com/blog/)  
 [Andrew Ray's Blog](http://blog.andrewray.me/)  
@@ -30,7 +30,7 @@ tags: 前端知识
 
 ## ES6
 
-《ES6标准入门》
+《ES6标准入门 2》
 
 ## jQuery
 

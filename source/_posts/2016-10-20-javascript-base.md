@@ -505,6 +505,16 @@ event.target.setAttribute('checked', true);
 event.target.getAttribute('checked', true);
 ```
 
+## setTimeout/setInterval 第三个参数
+
+setTimeout/setInterval 常用的都是传入两个参数，callback 函数和 time 延迟时间，第三个参数开始以及后面的参数，都会以作为参数传入到 callback 函数中。
+```
+function func(arg1, arg2) {
+  console.log(arg1, arg2);
+}
+setTimeout(func, 1000, 'first', 'second'); // 输出 first second
+```
+
 ## 如何让setTimeout立即执行
 
 注意，不是time, 而是time(), 这样浏览器解码的时候扫到这一行的代码直接就执行了。

@@ -107,6 +107,18 @@ Promise.resolve方法将现有对象转为Promise对象：
 - 如果参数是一个原始值，或者是一个不具有then方法的对象，则Promise.resolve方法返回一个新的Promise对象，状态为Resolved。
 - 如果不带任何参数，直接返回一个Resolved状态的Promise对象。
 
+如给fetch添加客户端超时，如果5秒之内fetch方法无法返回结果，变量p的状态就会变为rejected，从而触发catch方法指定的回调函数。
+```
+const p = Promise.race([
+  fetch(url),
+  new Promise(function (resolve, reject) {
+    setTimeout(() => reject(new Error('request timeout')), 5000)
+  })
+]);
+p.then(response => console.log(response));
+p.catch(error => console.log(error));
+```
+
 **注意，立即resolve的Promise对象，是在本轮“事件循环”的结束时执行，setTimeout(fn, 0)在下一轮“事件循环”开始时执行。**
 
 Promise.reject(reason)方法也会返回一个新的Promise实例，该实例的状态为rejected。它的参数用法与Promise.resolve方法完全一致。
@@ -140,6 +152,10 @@ Promise.prototype.finally = function (callback) {
 Promise.resolve().then(f)
 ```
 上面的写法有一个缺点，就是如果f是同步函数，那么它会在本轮事件循环的末尾执行。
+
+**立即 resolved 的 Promise 是在本轮事件循环的末尾执行，总是晚于本轮循环的同步任务。**
+**Promise 在resolve语句后面，再抛出错误，不会被捕获，等于没有抛出。因为 Promise 的状态一旦改变，就永久保持该状态，不会再变了**
+
 
 让同步函数同步执行，异步函数异步执行，并且让它们具有统一的 API，有两种方式：
 

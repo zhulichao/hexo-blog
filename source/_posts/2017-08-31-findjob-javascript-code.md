@@ -243,6 +243,23 @@ var array = [1,[3,[4],[5,[6,7]],8],[9,[10]]];
 var newarray = array.toString().split(',');
 ```
 
+// 方式三 使用es6的generator
+```
+var array = [1,[3,[4],[5,[6,7]],8],[9,[10]]];
+function* iterTree(tree) {
+  if (Array.isArray(tree)) {
+    for(let i=0; i < tree.length; i++) {
+      yield* iterTree(tree[i]);
+    }
+  } else {
+    yield tree;
+  }
+}
+for(let x of iterTree(array)) {
+  console.log(x);
+}
+```
+
 - 同一事件有多个监听方法，可分别删除监听方法
 
     当同一个对象使用.onclick的写法触发多个方法的时候，后一个方法会把前一个方法覆盖掉。而用addEventListener事件监听则不会有覆盖的现象，支持多重加载与冒泡捕获，每个绑定的事件都会被执行。
