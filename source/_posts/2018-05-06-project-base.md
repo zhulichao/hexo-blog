@@ -15,8 +15,67 @@ tags:
         - husky ：可以方便的通过 npm scripts 来调用各种 git hooks
         - lint-staged ：利用 git 的 staged 特性，可以提取出本次提交的变动文件，让 prettier 只处理这些文件
     - VSCode 中添加 Prettier - Code formatter 插件
+    .prettierrc
+    ```
+    {
+        "singleQuote": true,
+        "trailingComma": "all"
+    }
+    ```
+    package.json
+    ```
+    {
+        ...
+        "scripts": {
+            "precommit": "lint-staged",
+            ...
+        }
+    }
+    ```
+    stylelint
+    lint-staged 还用写吗
 
 - 语法检查
-    TSLint https://palantir.github.io/tslint/
-    tslint.json 是配置文件，./node_modules/tslint/bin/tsline --init 生成 tslint.json 文件
-    文档 configuration
+    - 参考 [TSLint 官网](https://palantir.github.io/tslint/) [tslint-react](https://github.com/palantir/tslint-react) 进行配置
+    - VSCode 中添加 TSLint 插件
+
+    tslint -c tslint.json 'src/**/*.{ts,tsx}'
+    -p 制定 tsconfig.json 配置文件
+    --fix 修复
+    
+    tslint.json
+    ```
+    {
+        "defaultSeverity": "error",
+        "extends": [
+            "tslint:latest", "tslint-react"
+        ],
+        "jsRules": {},
+        "rules": {},
+        "rulesDirectory": []
+    }
+    ```
+    package.json
+    ```
+    {
+        ...
+        "scripts": {
+            "lint-ts": "tslint -c tslint.json -p tsconfig.json 'src/**/*.tsx'",
+            "fix-ts" "tslint -c tslint.json -p tsconfig.json --fix 'src/**/*.tsx'",
+            "lint": "yarn run lint-ts && yarn run lint-css",
+            ...
+        }
+    }
+    ```
+
+- 持续集成 CI
+https://circleci.com，setting ，project ，找到项目，Follow Project,Builds 中运行
+项目中：
+.circleci/config.yml
+
+github setting branches 
+    require status check
+    ci/circleci
+
+
+- 自动化测试 ts-jest
