@@ -33,15 +33,12 @@ tags:
     }
     ```
     stylelint
+    tslint
     lint-staged 还用写吗
 
 - 语法检查
     - 参考 [TSLint 官网](https://palantir.github.io/tslint/) [tslint-react](https://github.com/palantir/tslint-react) 进行配置
     - VSCode 中添加 TSLint 插件
-
-    tslint -c tslint.json 'src/**/*.{ts,tsx}'
-    -p 制定 tsconfig.json 配置文件
-    --fix 修复
     
     tslint.json
     ```
@@ -67,6 +64,9 @@ tags:
         }
     }
     ```
+
+    查一下 tslint-config-prettier、pretty-quick
+    lint-staged 怎么用
 
 - 持续集成 CI
 https://circleci.com，setting ，project ，找到项目，Follow Project,Builds 中运行
