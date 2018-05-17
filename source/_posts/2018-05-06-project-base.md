@@ -10,6 +10,8 @@ tags: project-base
     - 默认分支
     - 保护分支，注意里面的配置项
 
+- VSCode 中添加 Code Spell Checker 进行拼写检查
+
 - 格式检查
     - 参考 [prettier 官网](https://prettier.io) 进行配置，它可以很好的集成的到项目中，利用 git 的 hooks 的机制，在提交 commit 时自动调用 prettier，使用 husky 和 lint-staged 配合使用
         - husky ：可以方便的通过 npm scripts 来调用各种 git hooks
@@ -17,7 +19,10 @@ tags: project-base
     - husky 配合 lint-stage 的过程可以通过 pretty-quick 来取代，但如果项目中也使用了其它工具，比如ESLint，请使用lint-stage
     - VSCode 中添加 Prettier - Code formatter 插件
 
-- stylelint
+- 样式检查
+    - 参考 [stylelint](https://stylelint.io/) 进行配置
+    - 安装 stylelint-config-standard、stylelint-order
+    - VSCode 中添加 stylelint 插件
 
 - 语法检查
     - 参考 [TSLint 官网](https://palantir.github.io/tslint/) [tslint-react](https://github.com/palantir/tslint-react) 进行配置
@@ -25,8 +30,9 @@ tags: project-base
     - VSCode 中添加 TSLint 插件
 
 - 自动化测试
-    - [Jest](https://facebook.github.io/jest/)，需安装 @types/jest
-    - 参考[ts-jest](https://github.com/kulshekhar/ts-jest)，作用是将 ts 写的测试文件转为 js 的，再对这些文件执行 jest
+    - 参考 [Jest](https://facebook.github.io/jest/)，需安装 @types/jest
+    - 参考 [ts-jest](https://github.com/kulshekhar/ts-jest)，作用是将 ts 写的测试文件转为 js 的，再对这些文件执行 jest
+    - VSCode 中添加 jest 插件
 
     ```
     import * as React from 'react';
@@ -113,6 +119,205 @@ tags: project-base
         "trailingComma": "all"
     }
     ```
+    - .stylelintrc 文件
+    ```
+    {
+        extends: 'stylelint-config-standard',
+        plugins: [
+            'stylelint-order',
+        ],
+        rules: {
+            'property-no-unknown': [
+                true,
+                {
+                    ignoreProperties: [
+                    'composes',
+                ],
+                },
+            ],
+            'selector-pseudo-class-no-unknown': [
+                true,
+                {
+                    ignorePseudoClasses: [
+                        'global',
+                    ],
+                },
+            ],
+            'string-quotes': 'single',
+            'order/order': [
+                'custom-properties',
+                'dollar-variables',
+                'declarations',
+                'at-rules',
+                'rules',
+            ],
+            'order/properties-order': [
+                'composes',
+                'position',
+                'top',
+                'right',
+                'bottom',
+                'left',
+                'z-index',
+                'display',
+                'align-content',
+                'align-items',
+                'align-self',
+                'flex',
+                'flex-basis',
+                'flex-direction',
+                'flex-flow',
+                'flex-grow',
+                'flex-shrink',
+                'flex-wrap',
+                'justify-content',
+                'order',
+                'float',
+                'width',
+                'height',
+                'max-width',
+                'max-height',
+                'min-width',
+                'min-height',
+                'padding',
+                'padding-top',
+                'padding-right',
+                'padding-bottom',
+                'padding-left',
+                'margin',
+                'margin-top',
+                'margin-right',
+                'margin-bottom',
+                'margin-left',
+                'margin-collapse',
+                'margin-top-collapse',
+                'margin-right-collapse',
+                'margin-bottom-collapse',
+                'margin-left-collapse',
+                'overflow',
+                'overflow-x',
+                'overflow-y',
+                'clip',
+                'clear',
+                'font',
+                'font-family',
+                'font-size',
+                'font-smoothing',
+                'osx-font-smoothing',
+                'font-style',
+                'font-weight',
+                'hyphens',
+                'src',
+                'line-height',
+                'letter-spacing',
+                'word-spacing',
+                'color',
+                'text-align',
+                'text-decoration',
+                'text-indent',
+                'text-overflow',
+                'text-rendering',
+                'text-size-adjust',
+                'text-shadow',
+                'text-transform',
+                'word-break',
+                'word-wrap',
+                'white-space',
+                'vertical-align',
+                'list-style',
+                'list-style-type',
+                'list-style-position',
+                'list-style-image',
+                'pointer-events',
+                'cursor',
+                'background',
+                'background-attachment',
+                'background-color',
+                'background-image',
+                'background-position',
+                'background-repeat',
+                'background-size',
+                'border',
+                'border-collapse',
+                'border-top',
+                'border-right',
+                'border-bottom',
+                'border-left',
+                'border-color',
+                'border-image',
+                'border-top-color',
+                'border-right-color',
+                'border-bottom-color',
+                'border-left-color',
+                'border-spacing',
+                'border-style',
+                'border-top-style',
+                'border-right-style',
+                'border-bottom-style',
+                'border-left-style',
+                'border-width',
+                'border-top-width',
+                'border-right-width',
+                'border-bottom-width',
+                'border-left-width',
+                'border-radius',
+                'border-top-right-radius',
+                'border-bottom-right-radius',
+                'border-bottom-left-radius',
+                'border-top-left-radius',
+                'border-radius-topright',
+                'border-radius-bottomright',
+                'border-radius-bottomleft',
+                'border-radius-topleft',
+                'content',
+                'quotes',
+                'outline',
+                'outline-offset',
+                'outline-width',
+                'outline-style',
+                'outline-color',
+                'opacity',
+                'filter',
+                'visibility',
+                'size',
+                'zoom',
+                'transform',
+                'box-align',
+                'box-flex',
+                'box-orient',
+                'box-pack',
+                'box-shadow',
+                'box-sizing',
+                'table-layout',
+                'animation',
+                'animation-delay',
+                'animation-duration',
+                'animation-iteration-count',
+                'animation-name',
+                'animation-play-state',
+                'animation-timing-function',
+                'animation-fill-mode',
+                'transition',
+                'transition-delay',
+                'transition-duration',
+                'transition-property',
+                'transition-timing-function',
+                'background-clip',
+                'backface-visibility',
+                'resize',
+                'appearance',
+                'user-select',
+                'interpolation-mode',
+                'direction',
+                'marks',
+                'page',
+                'set-link-source',
+                'unicode-bidi',
+                'speak',
+            ],
+        },
+    }
+    ```
     - tslint.json 文件
     ```
     {
@@ -166,6 +371,38 @@ tags: project-base
                 "object-literal-sort-keys": false
             }
         }
+    }
+    ```
+    - tsConfig.json 文件
+    ```
+    {
+        "compilerOptions": {
+            "outDir": "build/dist",
+            "module": "esnext",
+            "target": "es5",
+            "lib": ["es7", "dom"],
+            "sourceMap": true,
+            "allowJs": true,
+            "jsx": "react",
+            "moduleResolution": "node",
+            "rootDirs": ["src", "config"],
+            "forceConsistentCasingInFileNames": true,
+            "noImplicitReturns": true,
+            "noImplicitThis": true,
+            "noImplicitAny": true,
+            "strictNullChecks": true,
+            "suppressImplicitAnyIndexErrors": true,
+            "noUnusedLocals": true
+        },
+        "exclude": [
+            "node_modules",
+            "build",
+            "scripts",
+            "acceptance-tests",
+            "webpack",
+            "jest",
+            "src/setupTests.ts"
+        ]
     }
     ```
     - package.json 文件
@@ -230,14 +467,46 @@ tags: project-base
     ```
 
 - 持续集成 CI
-https://circleci.com，setting ，project ，找到项目，Follow Project,Builds 中运行
-项目中：
-.circleci/config.yml
-
-github setting branches 
-    require status check
-    ci/circleci
+    - 参考 [CircleCi](https://circleci.com)
+    - 登录 CircleCi，进入 Projects，Add Project，找到项目，Follow Project，Builds 中运行
+    - 登录 GitHub，github setting branches，require status check，ci/circleci
+    - 项目中配置 .circleci/config.yml 文件如下
+    - CI 中配置环境变量
+    ```
+    version: 2
+    jobs:
+    build:
+        working_directory: ~/repo
+        docker:
+        - image: circleci/node:latest
+        steps:
+        - checkout
+        - restore_cache:
+            keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+            - v1-dependencies-
+        - run: yarn install
+        - save_cache:
+            paths:
+                - node_modules
+            key: v1-dependencies-{{ checksum "package.json" }}
+        - run: yarn run lint
+        - run: yarn run test
+        - run:
+            name: yarn build
+            command: |
+                if [ "$CIRCLE_BRANCH" != "develop" ] && [ "$CIRCLE_BRANCH" != "master" ]; then
+                yarn build;
+                fi
+        - store_artifacts:
+            path: build
+            destination: build
+        - store_test_results:
+            path: coverage
+    ```
 
 
 https://www.jianshu.com/p/71bbcdc8c1fc
 https://www.cnblogs.com/baqiphp/p/7647912.html
+
+注意：[TypeScript 2.7](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-7.html) 支持 `import React from 'react` 的方式，需要在 ts.config 中配置 `"module": "commonjs"` `"esModuleInterop": true`。
