@@ -15,6 +15,21 @@ tags: 开发环境
 - 安装 Node
 
     `brew install node`
+    `brew install nvm`
+    `cd ~`
+    `vim .bash_profile`，添加以下命令
+    ```
+    export NVM_DIR=~/.nvm
+    source $(brew --prefix nvm)/nvm.sh
+    ```
+    `source .bash_profile`
+
+    ```
+    $ nvm ls-remote 查看 所有的node可用版本
+    $ nvm install xxx 下载你想要的版本
+    $ nvm use xxx 使用指定版本的node
+    $ nvm alias default xxx 每次启动终端都使用该版本的node
+    ```
 
 - 安装 Yarn
 
