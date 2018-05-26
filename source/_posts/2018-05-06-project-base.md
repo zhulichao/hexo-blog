@@ -12,6 +12,11 @@ tags: project-base
 
 - VSCode 中添加 Code Spell Checker 进行拼写检查
 
+- VSCode 中添加 EditorConfig for VS Code 进行风格统一
+    - 参考 [EditorConfig 官网](http://editorconfig.org)
+    - 项目根目录添加 .editorconfig 文件
+    - editorConfig 不是什么软件，而是一个名称为 .editorconfig 的自定义文件，该文件用来定义项目的编码规范，编辑器的行为会与.editorconfig 文件中定义的一致，并且其优先级比编辑器自身的设置要高
+
 - 格式检查
     - 参考 [prettier 官网](https://prettier.io) 进行配置，它可以很好的集成的到项目中，利用 git 的 hooks 的机制，在提交 commit 时自动调用 prettier，使用 husky 和 lint-staged 配合使用
         - husky ：可以方便的通过 npm scripts 来调用各种 git hooks
@@ -112,6 +117,21 @@ tags: project-base
     ```
 
 - 配置文件
+    - .editorconfig 文件
+    ```
+    root = true
+
+    [*]
+    indent_style = space
+    indent_size = 2
+    end_of_line = lf
+    charset = utf-8
+    trim_trailing_whitespace = true
+    insert_final_newline = true
+
+    # editorconfig-tools is unable to ignore long strings or urls
+    max_line_length = null
+    ```
     - .prettierrc 文件
     ```
     {
