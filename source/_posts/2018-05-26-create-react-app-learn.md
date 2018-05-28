@@ -67,6 +67,16 @@ react-dev-utils：开发调试模式用到的一些脚本和方法，如编译�
 create-react-app：全局 CLI 命令行工具，不应该经常变换，需适配多版本的 node。
 react-scripts：项目的核心，项目基础的配置，包括开发服务的脚本和设置，构建生产模式等。
 
+### create-react-app
+
+tasks 目录？
+
+create-react-app 由于是全局安装的，不会经常升级，因此要保持简单，少变更。它只负责做好一件事，初始化仓库
+
+- node_modules 没有包括所有 package.json 中的 dependencies 下的包
+- 执行 yarn install 后没有 yarn.lock 文件
+- createReactApp.js 中执行过安装 react、react-dom了，在 react-scripts/init.js 中再次执行
+
 
 create-react-app + custom react-srcipts
 - performance optimization
