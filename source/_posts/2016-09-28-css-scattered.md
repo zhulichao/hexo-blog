@@ -110,3 +110,21 @@ word-wrap属性允许长单词或URL地址换行到下一行。
 > break-word，在长单词或URL地址内部进行换行
 
 {% img https://zhulichao.github.io/2016/09/28/css-scattered/word-wrap.png word-wrap属性 %}
+
+## 图片未加载完成的占位
+
+```
+.imgWrapper {
+  position: relative;
+  height: 0;
+  padding-top: 190%; // 图片高度 / 图片宽度 * 100%
+  overflow: hidden;
+}
+
+img {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: auto;
+}
+```

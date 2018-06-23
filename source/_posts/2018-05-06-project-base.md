@@ -528,8 +528,5 @@ tags: project-base
     在运行测试时 `yarn test` 命令有时会带参数 `yarn test --maxWorkers 2`，[Jest 官方文档](https://facebook.github.io/jest/docs/zh-Hans/cli.html)描述如下：
     > 设定测试会使用的最大 worker 数目。 默认会使用你的计算机上可用的内核的数量。 在类似 CI 等有资源限制的环境下需要进行相关调整时很有用。但多数场景都应该使用默认值。
 
-https://www.jianshu.com/p/71bbcdc8c1fc
-https://www.cnblogs.com/baqiphp/p/7647912.html
-
 注意：[TypeScript 2.7](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-7.html) 支持 `import React from 'react` 的方式，需要在 ts.config 中配置 `"module": "commonjs"` `"esModuleInterop": true`。
 
