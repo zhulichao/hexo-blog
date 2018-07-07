@@ -2,8 +2,8 @@
 title: 项目基础配置
 layout: post
 date: 2018-05-06 09:57:52
-categories: project-base
-tags: project-base
+categories: Project-base
+tags: Project-base
 ---
 
 - 在 github 中配置
@@ -23,6 +23,7 @@ tags: project-base
         - lint-staged ：利用 git 的 staged 特性，可以提取出本次提交的变动文件，让 prettier 只处理这些文件
     - husky 配合 lint-stage 的过程可以通过 pretty-quick 来取代，但如果项目中也使用了其它工具，比如ESLint，请使用lint-stage
     - VSCode 中添加 Prettier - Code formatter 插件
+    - 执行 `./node_modules/.bin/prettier --single-quote --write "src/**/*.{js,jsx,json,css}"` 来检查整个项目
 
 - 样式检查
     - 参考 [stylelint](https://stylelint.io/) 进行配置
