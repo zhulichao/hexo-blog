@@ -2,8 +2,8 @@
 title: 微信小程序基础1
 layout: post
 date: 2018-03-16 23:30:41
-categories: WeChat Mini Program
-tags: WeChat Mini Program
+categories: WeChat
+tags: WeChat
 ---
 
 我们的项目中是使用 TypeScript 写代码，通过 rollup 编译成 javascript，在微信开发者工具打开 build 后的目录，即可运行，开发模式下在每次保存完代码后都会进行编译。仍使用 yarn add xxx 集成第三方 package，在使用 import 引入第三方依赖的时候，会将第三方文件打包进去，因此不用特殊处理。当然如果没有必要引用或者没有必要全部引用的，尽量不引用或引用局部文件，防止将所有文件都打包进去最终超过 2M 的限制。

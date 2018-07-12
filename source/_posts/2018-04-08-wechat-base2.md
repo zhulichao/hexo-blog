@@ -2,8 +2,8 @@
 title: 微信小程序基础2
 layout: post
 date: 2018-04-08 11:40:49
-categories: WeChat Mini Program
-tags: WeChat Mini Program
+categories: WeChat
+tags: WeChat
 ---
 
 ## 开发过程中的发现
