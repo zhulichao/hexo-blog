@@ -51,11 +51,21 @@ tags: WeChat
 
 - 前端需要 appID 执行 wx.config 进行 js-sdk 签名
 
+## 真机调试
+
+使用手机微信打开网页就是线上运行的效果，但这样不能使用 localhost 或 127.0.0.1 的地址，需要内网穿透工具进行本地端口映射，然后通过穿透的地址访问，可以使用 [ngrok](https://ngrok.com/)，但是有些慢，还是建议团队搭建完善的开发环境。
+
+可使用[微信开发者工具](https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html)或[微信web开发者工具](https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1455784140)进行调试。微信web开发者工具可进行移动调试，但需要注意，它在 Network 中显示的请求可能不准确，个人认为是过滤掉了微信内部的请求。以下为授权操作的请求对比。
+
+{% img https://zhulichao.github.io/2018/07/07/wechat-base3/tool.png 微信开发者工具 %}
+
+{% img https://zhulichao.github.io/2018/07/07/wechat-base3/web_tool.png 微信web开发者工具 %}
+
 ## 登录授权
 
 参考[微信网页授权](https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421140842)文档，工作主要是在后端，提供一个地址供前端访问，其余工作都由后端完成。后端确保 appID、appsecret、Token 值正确，服务号设置确保接口配置信息、JS接口安全域名、授权回调页面域名正确，即可完成登录授权。前后端都需要注意哪些设置的值是带协议的，哪些是不带协议的，如果服务号设置和后端设置的 appID 等值是正确的，可能是由于多带或少带协议名返回 redirect_uri 错误。我们项目中的 API_SERVER_URL 环境变量如果带了协议名，就会返回这个错误。在微信开发者工具中，授权是跳转到一个登录的页面，在真机上是弹框授权。
 
-因为微信网页授权其实是进行的页面跳转，在项目中如果授权后仍然停留在当前页面，但要发生一些行为，如弹框，只能通过授权后的回调地址带参数的形式。建议授权后的回调地址如果需要传参数，使用 hash 的形式传参，这是因为这个页面如果需要使用 js-sdk，在 iOS 上页面路径发生变化可能会导致 `wx.config()` 执行失败，但 hash 的形式不会有影响。进入页面时在 componentDidMount 中判断 url 是否带有指定的 hash 参数，有则表示是授权后进入的当前页面，执行指定的行为，然后将页面 hash 参数置空。正常情况下授权后进入页面会重新加载整个页面，也就是会执行完整的生命周期方法进入 componentDidMount 中，但实际中发现有些情况并没有进入 componentDidMount 方法，因此在 componentDidMount 方法中添加了 hashchange 的监听，在 componentWillUnmount 中取消监听，就完整的解决了微信网页授权问题。
+因为微信网页授权其实是进行的页面跳转，在项目中如果授权后仍然停留在当前页面，但要发生一些行为，如弹框，只能通过授权后的回调地址带参数的形式。建议授权后的回调地址如果需要传参数，使用 hash 的形式传参，这是因为这个页面如果需要使用 js-sdk，在 iOS 上页面路径发生变化可能会导致 `wx.config()` 执行失败，但 hash 的形式不会有影响。进入页面时在 componentDidMount 中判断 url 是否带有指定的 hash 参数，有则表示是授权后进入的当前页面，执行指定的行为，然后将页面 hash 参数置空。正常情况下授权后进入页面会重新加载整个页面，也就是会执行完整的生命周期方法进入 componentDidMount 中，**但实际中发现有些情况并没有进入 componentDidMount 方法**，因此在 componentDidMount 方法中添加了 hashchange 的监听，在 componentWillUnmount 中取消监听，如果在 componentDidMount 方法中需要网络请求的，也需要注意在授权返回后是否真正发起了该请求以及请求是走的网络还是缓存，可能需要进行特殊处理，就完整的解决了微信网页授权问题。
 
 微信开发者工具中可通过，清缓存 -> 清除开发者工具cookie 取消授权；iOS 真机可通过微信中，我 -> 设置 -> 通用 -> 存储空间 -> 清理微信缓存，取消授权；anroid 真机可通过在微信中，打开网页 debugx5.qq.com，勾上最下面的四项 Cookie、文件缓存、广告过滤缓存、DNS缓存，点击清除取消授权。
 
@@ -108,8 +118,34 @@ class Page extends React.Component {
 
 示例代码如下：
 ```js
-// 此处补充 _app.tsx 代码
+// _app.tsx
+const ContextType = {
+  initialUrl: PropTypes.string,
+};
+let initialUrl;
 
+class MyApp extends App {
+  public static childContextTypes = ContextType;
+
+  public static async getInitialProps({ Component, ctx }) {
+    let pageProps = {};
+
+    if (Component.getInitialProps) {
+      pageProps = await Component.getInitialProps(ctx);
+    }
+
+    return { pageProps, query: ctx.query, asPath: ctx.asPath };
+  }
+
+  public getChildContext() {
+    return {
+      initialUrl,
+    };
+  }
+  ...
+}
+
+// 使用组件
 try {
   // 1.获取签名需要的页面 url
   let signUrl = `${config.clientUrl}${Router.asPath}`;
@@ -163,4 +199,4 @@ try {
 - 小程序 -> 展示场景，在公众号资料中展示小程序
 - 设置 -> 公众号设置 -> 功能设置，JS接口安全域名为前端域名，网页授权域名为后端域名，业务域名好像没用【待确定】
 - 开发 -> 基本配置，IP白名单中添加后端 IP，服务器配置未启用【待确定】
-- 【待确定】微信商户平台配置、支付相关配置
+- 微信商户平台 -> 产品中心 -> 开发配置，设置H5支付的授权目录，注意是目录，以`/`结尾，如 `http://example.com/pages/`
