@@ -55,7 +55,9 @@ tags: WeChat
 
 使用手机微信打开网页就是线上运行的效果，但这样不能使用 localhost 或 127.0.0.1 的地址，需要内网穿透工具进行本地端口映射，然后通过穿透的地址访问，可以使用 [ngrok](https://ngrok.com/)，但是有些慢，还是建议团队搭建完善的开发环境。
 
-可使用[微信开发者工具](https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html)或[微信web开发者工具](https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1455784140)进行调试。微信web开发者工具可进行移动调试，但需要注意，它在 Network 中显示的请求可能不准确，个人认为是过滤掉了微信内部的请求。以下为授权操作的请求对比。
+可使用[微信开发者工具](https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html)或[微信web开发者工具](https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1455784140)进行调试。打开微信web开发者工具可能会报错，一直点确定就打开了。微信web开发者工具可进行移动调试，但需要注意，它在 Network 中显示的请求可能不准确，个人认为是过滤掉了微信内部的请求。以下为授权操作的请求对比。
+
+{% img https://zhulichao.github.io/2018/07/07/wechat-base3/error.png 微信web开发者工具报错 %}
 
 {% img https://zhulichao.github.io/2018/07/07/wechat-base3/tool.png 微信开发者工具 %}
 
