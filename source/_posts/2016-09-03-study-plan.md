@@ -27,6 +27,7 @@ tags: 前端知识
 ## JavaScript
 
 《JavaScript高级程序设计》
+《JavaScript语言精粹》
 
 ## ES6
 

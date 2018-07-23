@@ -2,8 +2,8 @@
 title: 《Web全栈工程师的自我修养》笔记
 layout: post
 date: 2017-09-23 23:27:29
-categories: Other
-tags: Other
+categories: Reading Notes
+tags: Reading Notes
 ---
 
 最近看了《Web全栈工程师的自我修养》，以下是个人感觉书中比较好的内容，记录下来方便以后查看。
