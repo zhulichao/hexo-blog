@@ -1,4 +1,4 @@
-{% img https://zhulichao.github.io/2017/08/31/findjob-algorithm/CompleteBinaryTree.png 完全二叉树 %}
+{% img https://zhulichao.github.io/2017/08/31/findjob-algorithm/CompleteBinaryTree.png 400 完全二叉树 %}
 
 ---
 
@@ -151,14 +151,6 @@ react官网
 react-native官网
 
 ---
-
-# 问
-
-生育保险报生育时候的生育津贴
-报1400的产前检查费，产前检查的收据都留着
-二次报销，产检费拢共5000多吧，扣掉1400，还有3600左右
-工作内容，之后的工作、发展方向有没有计划
-合同、违约金
 
 # 想
 
