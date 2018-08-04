@@ -128,3 +128,18 @@ img {
   height: auto;
 }
 ```
+
+## 获取滚动条宽度
+
+```js
+// 设置一个不可见的div，查看设置 scroll 前后的宽度差
+function getScrollWidth() {
+    const oDiv = document.createElement("DIV");
+    oDiv.style.cssText = "position:absolute;top:-1000px;width:100px;height:100px; overflow:hidden;";
+    const noScroll = document.body.appendChild(oDiv).clientWidth;
+    oDiv.style.overflowY = "scroll";
+    const scroll = oDiv.clientWidth;
+    document.body.removeChild(oDiv);
+    return noScroll-scroll;
+}
+```
