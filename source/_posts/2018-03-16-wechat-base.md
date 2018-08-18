@@ -10,6 +10,38 @@ tags: WeChat
 
 请注意因为使用了 ts，再引入第三方 package 时，有时 ts 校验会报错，可以关闭一次编辑器重新打开确认一下是否真的有校验错误，我在引入 moment 时就遇到了这个问题，第一次引入时有校验报错，第二天再试时就好了。
 
+## 编译后 process.env.NODE_ENV 的报错
+
+使用 rollup 编译后的文件，在微信开发者工具中运行时，会由于没有 process 变量但引用了 process.env.NODE_ENV 而报错。解决办法是使用 rollup-plugin-replace 插件，在 rollup.config.js 配置文件中添加如下代码即可。
+
+```js
+import replace from 'rollup-plugin-replace';
+
+export default {
+  ...
+  plugins: [
+    ...
+    replace({
+      'process.env.NODE_ENV': JSON.stringify(
+        process.env.NODE_ENV || 'development',
+      ),
+    }),
+  ],
+};
+```
+
+## 编译后 whatwg-fetch 中 this 为 undefined 的问题
+
+项目中有安装包依赖了 whatwg-fetch，由于小程序既不是浏览器环境也不是 node 环境，其中使用的 this 编译后变成了 undefined。解决办法是在 rollup.config.js 配置中间中指定 whatwg-fetch 上下文即可，但这个上下文要是小程序中无需定义而存在的上下文，经过试验可使用 global 变量。代码如下。
+
+```js
+export default {
+  moduleContext: {
+    [require.resolve('whatwg-fetch')]: 'global',
+  },
+};
+```
+
 ## 集成 Redux、Redux-Persist、Graphql、Apollo-Client
 
 `yarn add redux redux-persist`

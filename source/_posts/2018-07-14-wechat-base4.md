@@ -1,5 +1,5 @@
 ---
-title: 微信小程序基础4
+title: 小程序操作相册权限
 layout: post
 date: 2018-07-14 11:11:10
 categories: WeChat
