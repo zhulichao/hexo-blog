@@ -143,3 +143,26 @@ function getScrollWidth() {
     return noScroll-scroll;
 }
 ```
+
+## 英文单词使用连字符换行
+
+设置标签的 `lang="en"`，css 中添加 `hyphens: auto;`。
+
+```html
+<html lang="en">
+    <head>
+        <style>
+            p {
+                width: 80px;
+                border: 1px solid black;
+                hyphens: auto;
+            }
+        </style>
+    </head>
+    <body>
+        <p lang="en" class="auto">An extremely long English word</p>
+    </body>
+</html>
+```
+
+{% img https://zhulichao.github.io/2016/09/28/css-scattered/hyphens.png hyphens 属性 %}
