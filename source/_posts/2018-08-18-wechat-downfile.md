@@ -10,7 +10,7 @@ tags: WeChat
 
 在 android 上，文件下载或保存后，是保存在 `本地/内部存储/Tecent/MicroMsg/wxafiles/此处为appId` 目录中，下载的文件为临时文件，文件以 temp 开头，保存的文件以 store 开头。很奇怪，使用远程调试时输出的路径都是带有后缀的路径，但在文件系统中打开文件查看详情都是没有后缀的，如图1、图2所示。
 
-在小程序中使用 wx.openDocument 打开文件后，点击右上角三个点发送到微信传输助手在桌面端打开时都显示为 exec 文件，没办法直接打开，如图3、图4所示，重命名添加后缀后是可以的。
+在小程序中使用 wx.openDocument 打开文件后，在 android 上点击右上角三个点发送到微信传输助手在桌面端打开时都显示为 exec 文件，没办法直接打开，如图3、图4所示，重命名添加后缀后是可以的。
 
 {% img https://zhulichao.github.io/2018/08/18/wechat-downfile/directory.jpg 300 文件目录 %}
 
