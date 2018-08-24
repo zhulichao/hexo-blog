@@ -18,12 +18,12 @@ canvas 中绘制图片时，需要先使用 wx.downloadFile api 下载文件到�
 
 ### 居中显示不同样式的文字
 
-图片的中间需要显示“第 xxx 天“，整行文字需要居中显示，但数字的字体比较大，因此无法直接使用 canvasContext.setTextAlign api 进行文字居中设置。可使用 canvasContext.measureText
+图片的中间需要显示“第 xxx 天”，整行文字需要居中显示，但数字的字体比较大，因此无法直接使用 canvasContext.setTextAlign api 进行文字居中设置。可使用 canvasContext.measureText
  api 先计算出数字显示需要的宽度，然后将 “第 ” 和 “ 天” 放在计算后的位置居右和距左对齐。
 
 ### Modal 形式的图片被 canvas 覆盖
 
-canvas 属于原生组件，层级是最高的，页面中如果有需要弹出 Modal 的地方，是无法显示在 canvas 上面的。经试验，如果使用两个 canvas，是可以达到一个 canvas 在另一个 canvas 上面的，但是因为我们的项目中弹出的 Modal 有一个按钮，因此无法使用这种方式。我们采用了在屏幕的外面绘制图片，然后下载到本地，用 image 标签引用本地路径来显示图片。
+canvas 属于原生组件，层级是最高的，页面中如果有需要弹出 Modal 的地方，是无法显示在 canvas 上面的。经试验，如果使用两个 canvas，是可以达到一个 canvas 在另一个 canvas 上面的，但是因为我们的项目中弹出的 Modal 有一个按钮，因此无法使用这种方式。我们采用了在屏幕的外面绘制图片，绝对定位，top 为负值，然后下载到本地，用 image 标签引用本地路径来显示图片。
 
 ### 完整示例代码
 
