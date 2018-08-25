@@ -1,7 +1,7 @@
 ---
-title: 微信小程序基础3
+title: 小程序开发遇到问题
 layout: post
-date: 2018-08-17 14:37:38
+date: 2018-08-25 13:03:13
 categories: WeChat
 tags: WeChat
 ---
@@ -10,7 +10,7 @@ tags: WeChat
 
 ## 登录流程
 
-{% img https://zhulichao.github.io/2018/08/17/wechat-base5/flow.png 小程序登录流程 %}
+{% img https://zhulichao.github.io/2018/08/25/wechat-problem/flow.png 小程序登录流程 %}
 
 ## 部分用户没有 unionId
 
@@ -48,6 +48,37 @@ Page({
 });
 ```
 
-## 图片存在缓存
+## 网络图片存在缓存
 
 小程序中使用的网络图片，如果 url 没有发生变化，但后台更新了图片，使用小程序时可能会存在图片没有更新过来，把小程序从记录中删除了再打开，就可以了。也可以在使用图片的 url 后面添加查询参数 `url + '?' + Dare.parse(new Date())` 的方式不让小程序缓存图片。web-view 中打卡的网页链接也可以这么处理。
+
+## 一个值得思考的 bug
+
+问题描述：A 页面 -> B 页面 -> C 页面，在 C 页面中，进行背景音频播放，并添加了背景音频播放的监听，onPlay、onPause、onTimeUpdate、onEnded、onStop，这些监听中主要是更新当前页面的 data 值，来控制页面中的显示，如显示播放/暂停按钮，显示当前播放进度等，**并更新全局的当前播放音频的信息**，在从 C 页面返回到 B 页面及 A 页面时，会显示一个悬浮播放的控件，显示正在播放的背景音频的信息及播放进度。问题是在从 C 页面返回后，如果是从背景音频点击的暂停，悬浮播放控件中显示的当前播放进度会显示从 C 页面返回时的进度，而不是当前播放进度。
+
+分析原因：经过大概1小时的 bug 追踪，发现问题的原因是背景音频播放的监听是在 C 页面内的，在 onPause 监听中，更新全局播放音频信息的代码是如下代码中的第一段，但从 C 页面返回后，C 页面已经销毁了，这时再获取 this.data.tipRecord 是销毁页面前的数据（刚开始这么写的时候我以为会报错），也就是从 C 返回时的数据。将代码修改为第二段，主要是更新全局提示记录的处理是基于全局 store 中的数据，而不是当前页面的 data，该问题就解决了。
+
+在 C 页面中的音频播放监听方法：
+```
+// 第一段，有问题的
+this.backgroundAudioManager.onPause(() => {
+    // 全局提示记录处理，更新 store 中的全局信息
+    this.setTipRecord({
+        ...this.data.tipRecord,
+        show: true,
+        paused: true,
+    });
+});
+
+// 第二段，修正后的
+this.backgroundAudioManager.onPause(() => {
+    // 获取全局 store 中的音频播放信息
+    const storeData = this.store.getState();
+    // 全局提示记录处理，更新 store 中的全局信息
+    this.setTipRecord({
+        ...storeData.tipRecord,
+        show: true,
+        paused: true,
+    });
+});
+```

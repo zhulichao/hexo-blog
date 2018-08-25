@@ -1,7 +1,7 @@
 ---
-title: 微信小程序基础2
+title: 微信小程序开发基础2
 layout: post
-date: 2018-04-08 11:40:49
+date: 2018-08-25 13:01:54
 categories: WeChat
 tags: WeChat
 ---
@@ -24,41 +24,7 @@ console.log(backgroundAudioManager.src);
 - 如果有富文本的内容需要后端返回，因为 web-view 有一些限制，为了降低开发成本可以使用长图的形式
 - onUnload 是页面元素已经卸载后的回调，目前小程序没有提供页面元素卸载前的回调，如果在 onUnload 中进行获取页面元素的操作可能会报错
 - 官方文档中描述，wx:if 有更高的切换消耗而 hidden 有更高的初始渲染消耗，如果需要频繁切换的情景下，用 hidden 更好，如果在运行时条件不大可能改变则 wx:if 较好
-- 确定了在 android 手机（华为荣耀8），临时文件和保存文件的存储路径，在文件系统是可以看到的，路径如下，其中 `wx2a4a59eb34efaf3b` 为 appid，`tmp_` 表示临时文件，`store_` 表示保存的文件，也就说明如果使用了文件的存储，需要处理文件被用户手动删除的处理
-    `/Tecent/MicroMsg/wxafiles/wx2a4a59eb34efaf3b/tmp_df3c24e50376e0354dc22798e6dccfda9e88f20b6d7ed0e0.jpg`
-    `/Tecent/MicroMsg/wxafiles/wx2a4a59eb34efaf3b/store_df3c24e50376e0354dc22798e6dccfda9e88f20b6d7ed0e0.jpg`
 - 100vh 指的是去掉顶部 Header 和底部 TabBar (如果存在) 后的高度，wx.getSystemInfo() 返回的理论上也是去掉顶部 Header 和底部 TabBar (如果存在) 后的高度，但存在适配问题，在 android 机上不同页面调用可能返回不同的值
-
-## 一个值得思考的 bug
-
-问题描述：A 页面 -> B 页面 -> C 页面，在 C 页面中，进行背景音频播放，并添加了背景音频播放的监听，onPlay、onPause、onTimeUpdate、onEnded、onStop，这些监听中主要是更新当前页面的 data 值，来控制页面中的显示，如显示播放/暂停按钮，显示当前播放进度等，**并更新全局的当前播放音频的信息**，在从 C 页面返回到 B 页面及 A 页面时，会显示一个悬浮播放的控件，显示正在播放的背景音频的信息及播放进度。问题是在从 C 页面返回后，如果是从背景音频点击的暂停，悬浮播放控件中显示的当前播放进度会显示从 C 页面返回时的进度，而不是当前播放进度。
-
-分析原因：经过大概1小时的 bug 追踪，发现问题的原因是背景音频播放的监听是在 C 页面内的，在 onPause 监听中，更新全局播放音频信息的代码是如下代码中的第一段，但从 C 页面返回后，C 页面已经销毁了，这时再获取 this.data.tipRecord 是销毁页面前的数据（刚开始这么写的时候我以为会报错），也就是从 C 返回时的数据。将代码修改为第二段，主要是更新全局提示记录的处理是基于全局 store 中的数据，而不是当前页面的 data，该问题就解决了。
-
-在 C 页面中的音频播放监听方法：
-```
-// 第一段，有问题的
-this.backgroundAudioManager.onPause(() => {
-    // 全局提示记录处理，更新 store 中的全局信息
-    this.setTipRecord({
-        ...this.data.tipRecord,
-        show: true,
-        paused: true,
-    });
-});
-
-// 第二段，修正后的
-this.backgroundAudioManager.onPause(() => {
-    // 获取全局 store 中的音频播放信息
-    const storeData = this.store.getState();
-    // 全局提示记录处理，更新 store 中的全局信息
-    this.setTipRecord({
-        ...storeData.tipRecord,
-        show: true,
-        paused: true,
-    });
-});
-```
 
 ## 参考组件
 
@@ -219,7 +185,7 @@ component.wxml
 
 小程序正式部署使用 webpack 打的包，而在打包的过程中，把以下变量给屏蔽了：`window,document,frames,self,location,navigator,localStorage,history,Caches,screen,alert,confirm,prompt,XMLHttpRequest,WebSocket`。主要是为了管理和监控，如果这些对象你能访问，就可以像操作通常的网页一样操作小程序，这是绝对不被允许的。
 
-{% img https://zhulichao.github.io/2018/04/08/wechat-base2/folder.png 小程序打包后的结构 %}
+{% img https://zhulichao.github.io/2018/08/25/wechat-base2/folder.png 小程序打包后的结构 %}
 
 所有的小程序最后基本都被打成上面的结构，其中：
 - WAService.js 框架JS库，提供逻辑层基础的API能力
@@ -296,4 +262,4 @@ dp 是以屏幕分辨率为基准的动态单位，而 rpx 是以长度为基准
 
 如果将微信小程序放到平板电脑上运行，屏幕的宽度 px 值有可能会变化（横竖屏、分屏模式等等），这时候，再以宽度为基准，就会出现元素显示不正确的问题，从这一点可以看出，微信团队目前并不希望将小程序扩展到手机以外的设备中。
 
-## 多屏适配
+## 多屏适配（待完成）
