@@ -16,13 +16,12 @@ tags: 开发环境
 
     `brew install node`
     `brew install nvm`
-    `cd ~`
-    `vim .bash_profile`，添加以下命令
+    `vim ~/.profile`，添加以下命令
     ```
     export NVM_DIR=~/.nvm
     source $(brew --prefix nvm)/nvm.sh
     ```
-    `source .bash_profile`
+    `source ~/.profile`
 
     ```
     $ nvm ls-remote 查看 所有的node可用版本
