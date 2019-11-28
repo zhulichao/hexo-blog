@@ -74,9 +74,16 @@ cmd中输入`echo %PATH%` 可查看path环境变量
 
 ## 端口占用
 
+### windows
+
 netstat -aon | findstr 8088 # 查看指定端口被哪个进程占用，会返回一个进程号
 tasklist | findstr 6808 # 查看指定进程号是哪个程序的
 taskkill -F -IM javaw.exe # 杀死应用程序
+
+### mac
+
+sudo lsof -i :4000
+sudo kill -9 [PID]
 
 ## eclipse分配内存
 

@@ -54,7 +54,7 @@ tags: 前端知识
 ## Redux
 
 [Redux 入门教程（一）：基本用法](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html)  
-[Redux 入门教程（二）：中间件与异步操作](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_two_async_operations.html)  
+[Redux 入门教程（二）：中间件与异步操作](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_two_async_operations.html)
 [Redux 入门教程（三）：React-Redux 的用法](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_three_react-redux.html) 
 
 ## NPM
@@ -100,8 +100,6 @@ tags: 前端知识
 《React Native 跨平台移动应用开发》
 《React Native 入门与实战》
 《React Native 开发指南》
-《Objective-C编程》
-《Objective-C高级编程:iOS与OSX多线程和内存管理》
 
 ## 小程序
 
