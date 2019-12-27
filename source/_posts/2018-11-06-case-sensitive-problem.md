@@ -23,7 +23,6 @@ tags: Git
 
 {% img https://zhulichao.github.io/2018/11/06/case-sensitive-problem/mv_folder.png 400 图3 %}
 
-
 ## 方式二
 
 可以将电脑磁盘单独分出一个大小写敏感的分区作为开发空间，再关闭 git 忽略大小写即可。注意在大小写敏感的分区开发时，如果存在同名大小写不同的文件，有些编辑器如 vscode 可能只会加载一个文件。
