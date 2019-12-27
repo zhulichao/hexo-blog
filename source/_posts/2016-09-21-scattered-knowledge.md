@@ -234,3 +234,7 @@ imp system/sys1234@orcl fromuser=DEV_BASE touser=DEV_BASE file=E:\DEV_BASE.dmp
 ## 元编程
 
 简单的理解可以说成是“关于编程的编程”，或者说“与编程相关的编程”，如程序甲可以输出 A ~ Z，而程序乙可以生成程序甲，那么编写程序乙的活动就可以算作元编程。元编程更狭义的意思应该是指“编写能改变语言语法特性或者运行时特性的程序”，一种语言本来做不到的事情，通过编程来修改它，使得它可以做到了，这就是元编程。
+
+## robots.txt
+
+[【百度百科】](https://baike.baidu.com/item/robots%E5%8D%8F%E8%AE%AE/2483797?fromtitle=robots.txt&fromid=9518761&fr=aladdin)robots协议也叫robots.txt（统一小写）是一种存放于网站根目录下的ASCII编码的文本文件，它通常告诉网络搜索引擎的漫游器（又称网络蜘蛛），此网站中的哪些内容是不应被搜索引擎的漫游器获取的，哪些是可以被漫游器获取的。因为一些系统中的URL是大小写敏感的，所以robots.txt的文件名应统一为小写。robots.txt应放置于网站的根目录下。如果想单独定义搜索引擎的漫游器访问子目录时的行为，那么可以将自定的设置合并到根目录下的robots.txt，或者使用robots元数据（Metadata，又称元数据）。

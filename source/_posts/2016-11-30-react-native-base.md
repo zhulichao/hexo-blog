@@ -441,6 +441,8 @@ async agreeHandler(data) {
 
 {% img https://zhulichao.github.io/2016/11/30/react-native-base/rn_start_err.png 见到这个错误需重新启动 %}
 
+如果用 ios 模拟器调试时所有操作都变得很慢，检查模拟器 → Debug → Slow Animations 是否为选中了，取消选中即可。
+
 ## React 调试
 
 直接使用Debug JS Remotely启动浏览器的调试工具是没有React组件调试的。按如下方式可以进行React组件 调试，但React调试和浏览器的调试 http://localhost:8081/debugger-ui 不能同时使用。
