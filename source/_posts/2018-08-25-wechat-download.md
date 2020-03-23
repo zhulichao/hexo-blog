@@ -12,13 +12,13 @@ tags: WeChat
 
 在小程序中使用 wx.openDocument 打开文件后，在 android 上点击右上角三个点发送到微信传输助手在桌面端打开时都显示为 exec 文件，没办法直接打开，如图3、图4所示，重命名添加后缀后是可以的。
 
-{% img https://zhulichao.github.io/2018/08/25/wechat-download/directory.jpg 300 文件目录 %}
+{% img /2018/08/25/wechat-download/directory.jpg 300 文件目录 %}
 
-{% img https://zhulichao.github.io/2018/08/25/wechat-download/log.png 300 输出 %}
+{% img /2018/08/25/wechat-download/log.png 300 输出 %}
 
-{% img https://zhulichao.github.io/2018/08/25/wechat-download/send.jpg 300 发送 %}
+{% img /2018/08/25/wechat-download/send.jpg 300 发送 %}
 
-{% img https://zhulichao.github.io/2018/08/25/wechat-download/desktop.png 300 发送 %}
+{% img /2018/08/25/wechat-download/desktop.png 300 发送 %}
 
 示例代码如下：
 

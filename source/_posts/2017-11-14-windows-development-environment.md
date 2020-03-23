@@ -71,6 +71,6 @@ tags: 开发环境
 
 右键项目，Run As ——> Run on Server 进行项目启动，如果没起起来，看一下Server.xml中内容是否如下，最后将端口改为8088
 
-{% img https://zhulichao.github.io/2017/11/14/windows-development-environment/server.png Server.xml配置 %}
+{% img /2017/11/14/windows-development-environment/server.png Server.xml配置 %}
 
 **注意：** 数据库配置在 /WebRoot/WEB-INF/db.properties 中

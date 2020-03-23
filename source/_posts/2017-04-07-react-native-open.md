@@ -51,7 +51,7 @@ project(':react-native-file-opener').projectDir = new File(settingsDir, '../node
     }
     ```
 * `Usage`
-在上一篇[React-Native-上传下载](https://zhulichao.github.io/2017/04/03/react-native-upload/)例子的基础上，添加如下代码
+在上一篇[React-Native-上传下载](/2017/04/03/react-native-upload/)例子的基础上，添加如下代码
 ```
 ...
 import FileOpener from 'react-native-file-opener';
@@ -74,4 +74,4 @@ class TestFileStream extends Component {
 }
 export default TestFileStream;
 ```
-{% img https://zhulichao.github.io/2017/04/07/react-native-open/open.gif 300 运行结果 %}
+{% img /2017/04/07/react-native-open/open.gif 300 运行结果 %}

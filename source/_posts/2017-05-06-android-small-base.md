@@ -115,7 +115,7 @@ gradlew buildBundle -q
 
 ## 工程结构图
 
-{% img https://zhulichao.github.io/2017/05/06/android-small-base/small.png 工程目录结构 %}
+{% img /2017/05/06/android-small-base/small.png 工程目录结构 %}
 
 - 宿主：工程中的app模块，不能依赖lib.xxx
     - assets目录下的bundle.json声明宿主使用的插件，每个bundle可定义一些rule去启动特定的Activity

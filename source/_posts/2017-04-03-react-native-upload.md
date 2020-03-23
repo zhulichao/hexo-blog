@@ -259,5 +259,5 @@ const styles = StyleSheet.create({
 
 export default TestFileStream;
 ```
-{% img https://zhulichao.github.io/2017/04/03/react-native-upload/file.gif 300 运行结果 %}
-{% img https://zhulichao.github.io/2017/04/03/react-native-upload/file.png 打印结果 %}
+{% img /2017/04/03/react-native-upload/file.gif 300 运行结果 %}
+{% img /2017/04/03/react-native-upload/file.png 打印结果 %}

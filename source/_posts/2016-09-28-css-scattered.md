@@ -49,9 +49,9 @@ CSS代码：
     border-style: dotted dotted dotted solid;
 }
 ```
-{% img https://zhulichao.github.io/2016/09/28/css-scattered/transparent.png 结果如图 %}
+{% img /2016/09/28/css-scattered/transparent.png 结果如图 %}
 
-{% img https://zhulichao.github.io/2016/09/28/css-scattered/transparent2.png 原理如图 %}
+{% img /2016/09/28/css-scattered/transparent2.png 原理如图 %}
 
 ## !important
 
@@ -100,7 +100,7 @@ word-break属性规定自动换行的处理方法，通过使用该属性，可�
 > break-all，允许在单词内换行
 > keep-all，只能在半角空格或连字符处换行
 
-{% img https://zhulichao.github.io/2016/09/28/css-scattered/word-break.png word-break属性 %}
+{% img /2016/09/28/css-scattered/word-break.png word-break属性 %}
 
 ## word-wrap属性
 
@@ -109,7 +109,7 @@ word-wrap属性允许长单词或URL地址换行到下一行。
 > normal，只在允许的断字点换行（浏览器保持默认处理）
 > break-word，在长单词或URL地址内部进行换行
 
-{% img https://zhulichao.github.io/2016/09/28/css-scattered/word-wrap.png word-wrap属性 %}
+{% img /2016/09/28/css-scattered/word-wrap.png word-wrap属性 %}
 
 ## 图片未加载完成的占位
 
@@ -165,4 +165,4 @@ function getScrollWidth() {
 </html>
 ```
 
-{% img https://zhulichao.github.io/2016/09/28/css-scattered/hyphens.png hyphens 属性 %}
+{% img /2016/09/28/css-scattered/hyphens.png hyphens 属性 %}

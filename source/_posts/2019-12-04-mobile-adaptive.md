@@ -12,7 +12,7 @@ tags: CSS
 
 适配只跟倍率相关，同一倍率下，界面上的间距、文字大小、icon大小是一样的，不同的只是屏幕显示内容的宽度和高度不同，元素的间距不同。在适配的时候通常会遵循三个适配原则：**等比缩放、弹性控件、文字流自适应。**
 
-{% img https://zhulichao.github.io/2019/12/04/mobile-adaptive/adaptive.png 图片素材来自设计驱动力 %}
+{% img /2019/12/04/mobile-adaptive/adaptive.png 图片素材来自设计驱动力 %}
 
 ## 通用
 

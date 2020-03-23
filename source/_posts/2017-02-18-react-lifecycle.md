@@ -48,7 +48,7 @@ tags: React
 
     组件在卸载前进入，如果组件申请了某些资源或订阅了某些消息，需要要在这个函数中释放资源或取消订阅，常见的是在这里清除定时器。
 
-{% img https://zhulichao.github.io/2017/02/18/react-lifecycle/life.gif 单个组件的生命周期过程 %}
+{% img /2017/02/18/react-lifecycle/life.gif 单个组件的生命周期过程 %}
 
 ## 多个组件的生命周期过程
 
@@ -56,17 +56,17 @@ tags: React
 
 先进入父组件的componentWillUnmount，再进入子组件的componentWillUnmount，就像先进入父组件的componentWillUpdate，再进入子组件的componentWillUpdate一样，只是React没有componentDidUnmount方法，看不到是先卸载子组件完成，再卸载父组件完成的。
 
-{% img https://zhulichao.github.io/2017/02/18/react-lifecycle/mount.png 初始化 %}
+{% img /2017/02/18/react-lifecycle/mount.png 初始化 %}
 
-{% img https://zhulichao.github.io/2017/02/18/react-lifecycle/update.png 更新 %}
+{% img /2017/02/18/react-lifecycle/update.png 更新 %}
 
-{% img https://zhulichao.github.io/2017/02/18/react-lifecycle/unmount.png 卸载 %}
+{% img /2017/02/18/react-lifecycle/unmount.png 卸载 %}
 
 ## forceUpdate函数
 
 forceUpdate函数不是组件的生命周期函数，组件通过调用`this.forceUpdate()`可以强制进行组件的重新渲染，并且会连带所有子组件都重新渲染。通过这种方式的重新渲染，不会进入本组件shouldComponentUpdate方法，会进入子组件的shouldComponentUpdate和componentWillReceiveProps方法及其它生命周期方法。
 
-{% img https://zhulichao.github.io/2017/02/18/react-lifecycle/forceUpdate.png forceUpdate操作 %}
+{% img /2017/02/18/react-lifecycle/forceUpdate.png forceUpdate操作 %}
 
 ## HOC（High Order Component ）高阶组件
 
@@ -119,6 +119,6 @@ ReactDOM.render(
 );
 ```
 
-{% img https://zhulichao.github.io/2017/02/18/react-lifecycle/hoc.png HOC的ref结构 %}
+{% img /2017/02/18/react-lifecycle/hoc.png HOC的ref结构 %}
 
-{% img https://zhulichao.github.io/2017/02/18/react-lifecycle/hocHtml.png HOC渲染出的DOM结构 %}
+{% img /2017/02/18/react-lifecycle/hocHtml.png HOC渲染出的DOM结构 %}

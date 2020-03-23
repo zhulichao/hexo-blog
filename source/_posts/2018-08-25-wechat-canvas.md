@@ -176,6 +176,6 @@ Page({
 });
 ```
 
-{% img https://zhulichao.github.io/2018/08/25/wechat-canvas/1.jpeg 300 canvas 绘制的图片 %}
+{% img /2018/08/25/wechat-canvas/1.jpeg 300 canvas 绘制的图片 %}
 
-{% img https://zhulichao.github.io/2018/08/25/wechat-canvas/2.jpeg 300 点击 Modal 效果 %}
+{% img /2018/08/25/wechat-canvas/2.jpeg 300 点击 Modal 效果 %}

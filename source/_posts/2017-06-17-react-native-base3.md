@@ -13,7 +13,7 @@ tags: React Native
 - 个人感觉react-native的主要优点还是快速构建页面，无论是使用antd-mobile的组件库还是使用react-native官方提供的组件，都能相对快速的搭建页面，但是，无论使用哪种方式也都存在着同一个问题，就是样式问题，如果要完全按照UI设计做出一套页面，还是不太容易。
 - 个人感觉react-native在页面交互上还是比较方便的，可以通过组件、组件提供的方法进行事件的控制，如页面跳转、点击、关联刷新等，目前很少发现有不支持的事件。
 - 个人感觉，在android上开发的react-native项目，调试出一版ios的困难并不大，如果开发中使用的第三方依赖都是兼容ios的且不考虑ios适配问题，预计一周时间是可以调出一版兼容ios的。
-- 开源的第三方组件比较多，目前使用过的第三方依赖可参考[React-Native-依赖](https://zhulichao.github.io/2017/04/02/react-native-dependencies/)，而且已经确认友盟、bugtags都可以支持react-native。
+- 开源的第三方组件比较多，目前使用过的第三方依赖可参考[React-Native-依赖](/2017/04/02/react-native-dependencies/)，而且已经确认友盟、bugtags都可以支持react-native。
 
 ## 缺点
 
@@ -21,7 +21,7 @@ tags: React Native
 
 react-native项目名称修改不方便，个人认为目前就是不能修改项目名称。使用react-native-cli初始化的项目，android目录和ios目录中都有很多地方使用了项目名称，不是修改根目录文件夹的名称就能修改项目名称的，因此如果想使用已有的稳定项目生成新的项目，只能先初始化一个新的项目，再手动移代码，很不方便。
 
-目前已经试验过针对android的项目名称修改的方法，参见[React-Native-基础1](https://zhulichao.github.io/2016/11/30/react-native-base/)中“项目名称修改”部分，但针对ios的项目名称修改还没有找到解决办法，因此还不敢使用这种方法。
+目前已经试验过针对android的项目名称修改的方法，参见[React-Native-基础1](/2016/11/30/react-native-base/)中“项目名称修改”部分，但针对ios的项目名称修改还没有找到解决办法，因此还不敢使用这种方法。
 
 ### 不支持web端
 
@@ -31,9 +31,9 @@ react-native项目名称修改不方便，个人认为目前就是不能修改�
 
 开发中常见两个错误，截图如下，目前只在开发环境有，打包后的生产环境暂时还没发现。开发环境下OOM错误非常频繁，查找react-native在github上的[issues列表](https://github.com/facebook/react-native/issues/13379)建议将使用图片的ListView换成FlatList。
 
-{% img https://zhulichao.github.io/2017/06/17/react-native-base3/langPressIn.jpg 300 RESPONDER_ACTIVE_LONG_PRESS_IN错误 %}
+{% img /2017/06/17/react-native-base3/langPressIn.jpg 300 RESPONDER_ACTIVE_LONG_PRESS_IN错误 %}
 
-{% img https://zhulichao.github.io/2017/06/17/react-native-base3/oom.png 300 OOM错误 %}
+{% img /2017/06/17/react-native-base3/oom.png 300 OOM错误 %}
 
 ### 多个异步请求 redux-saga
 

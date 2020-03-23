@@ -10,7 +10,7 @@ tags: CSS
 
 :last-child 表示其父元素的最后一个子元素，且这个元素是 css 指定的元素，才可以生效，否则无法生效，first-child 同理。:last-of-type 表示其父元素下的最后一个指定类型的元素。
 
-{% img https://zhulichao.github.io/2019/11/29/css-scattered2/last-child.png last-child 与 last-of-type %}
+{% img /2019/11/29/css-scattered2/last-child.png last-child 与 last-of-type %}
 
 ## 锚点定位偏移
 

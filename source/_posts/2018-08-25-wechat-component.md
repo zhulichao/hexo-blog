@@ -10,9 +10,9 @@ tags: WeChat
 
 使用小程序的 swiper 组件，是能达到常规的 swiper 功能的，但是原生提供的样式有限，通常为图1、图2的样式。
 
-{% img https://zhulichao.github.io/2018/08/25/wechat-component/swiper-1.gif 300 图1 %}
+{% img /2018/08/25/wechat-component/swiper-1.gif 300 图1 %}
 
-{% img https://zhulichao.github.io/2018/08/25/wechat-component/swiper-2.gif 300 图2 %}
+{% img /2018/08/25/wechat-component/swiper-2.gif 300 图2 %}
 
 通过样式的处理可达到图3的效果。示例代码如下：
 
@@ -72,4 +72,4 @@ swiper {
 }
 ```
 
-{% img https://zhulichao.github.io/2018/08/25/wechat-component/swiper-3.gif 300 图3 %}
+{% img /2018/08/25/wechat-component/swiper-3.gif 300 图3 %}

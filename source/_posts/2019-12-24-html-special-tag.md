@@ -50,4 +50,4 @@ tags: HTML
 </html>
 ```
 
-{% img https://zhulichao.github.io/2019/12/24/html-special-tag/tag.png 效果图 %}
+{% img /2019/12/24/html-special-tag/tag.png 效果图 %}

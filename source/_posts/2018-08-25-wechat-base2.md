@@ -185,7 +185,7 @@ component.wxml
 
 小程序正式部署使用 webpack 打的包，而在打包的过程中，把以下变量给屏蔽了：`window,document,frames,self,location,navigator,localStorage,history,Caches,screen,alert,confirm,prompt,XMLHttpRequest,WebSocket`。主要是为了管理和监控，如果这些对象你能访问，就可以像操作通常的网页一样操作小程序，这是绝对不被允许的。
 
-{% img https://zhulichao.github.io/2018/08/25/wechat-base2/folder.png 小程序打包后的结构 %}
+{% img /2018/08/25/wechat-base2/folder.png 小程序打包后的结构 %}
 
 所有的小程序最后基本都被打成上面的结构，其中：
 - WAService.js 框架JS库，提供逻辑层基础的API能力

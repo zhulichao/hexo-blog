@@ -140,7 +140,7 @@ const urlInfo = this.props.location.state;
 两者的共同点是：无状态，或者说状态提取到上层，统一由 redux 的 store 来管理。redux state -> Smart component -> Dumb component -> Dumb component（通过 props 传递）。在实践中，少量 Dumb component 允许自带 UI 状态信息（组件 unmount 后，不需要保留 UI 状态）。  
 值得注意的是：Smart component 是应用更新状态的最小单元。实践中，可以将 route handlers 作为 Smart component，一个 Smart component 对应一个 reducer。
 
-{% img https://zhulichao.github.io/2016/09/12/react-experience1/smart-dumb-components.png 结果如图 %}
+{% img /2016/09/12/react-experience1/smart-dumb-components.png 结果如图 %}
 
 ## ref回调函数
 
@@ -234,7 +234,7 @@ class CompA extends React.Component {
 }
 ```
 
-{% img https://zhulichao.github.io/2016/09/12/react-experience1/setState1.png 运行结果如图 %}
+{% img /2016/09/12/react-experience1/setState1.png 运行结果如图 %}
 
 ## forceUpdate函数
 
@@ -288,7 +288,7 @@ ReactDOM.render(
 );
 ```
 
-{% img https://zhulichao.github.io/2016/09/12/react-experience1/forceUpdate1.png 运行结果如图 %}
+{% img /2016/09/12/react-experience1/forceUpdate1.png 运行结果如图 %}
 
 ## 关于render函数
 
@@ -329,7 +329,7 @@ class CompA extends React.Component {
 }
 ```
 
-{% img https://zhulichao.github.io/2016/09/12/react-experience1/render1.png 运行结果如图 %}
+{% img /2016/09/12/react-experience1/render1.png 运行结果如图 %}
 
 ## 组件定义外的代码
 
@@ -441,6 +441,6 @@ ReactDOM.render(
 );
 ```
 
-{% img https://zhulichao.github.io/2016/09/12/react-experience1/null.png getChildContext返回name为null %}
+{% img /2016/09/12/react-experience1/null.png getChildContext返回name为null %}
 
 在使用中发现了一个问题，在一个组件提供的context值改变时，使用这个值的子节点并没有接受到context的改变，没有达到要跨级共享数据的效果。网上说可以在这个提供context组件值改变时执行setState这样就会更新了，但通常使用context都是在组件顶层，这样进行整个重新渲染感觉不太好。

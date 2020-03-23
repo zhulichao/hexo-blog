@@ -17,11 +17,11 @@ tags: Git
 - `git mv Folder temp && git mv temp folder` 在 git 中对文件夹重命名，注意需使用临时名称，否则无法重命名，如图2、3
 - 后面正常提交就可以了
 
-{% img https://zhulichao.github.io/2018/11/06/case-sensitive-problem/mv_file.png 400 图1 %}
+{% img /2018/11/06/case-sensitive-problem/mv_file.png 400 图1 %}
 
-{% img https://zhulichao.github.io/2018/11/06/case-sensitive-problem/err.png 400 图2 %}
+{% img /2018/11/06/case-sensitive-problem/err.png 400 图2 %}
 
-{% img https://zhulichao.github.io/2018/11/06/case-sensitive-problem/mv_folder.png 400 图3 %}
+{% img /2018/11/06/case-sensitive-problem/mv_folder.png 400 图3 %}
 
 ## 方式二
 

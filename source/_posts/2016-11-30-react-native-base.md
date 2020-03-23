@@ -430,16 +430,16 @@ async agreeHandler(data) {
 
 如果Packager的控制台编译未完成或模拟器报Unexpected token，很有可能是存在语法错误。
 
-{% img https://zhulichao.github.io/2016/11/30/react-native-base/UnexpectedToken.png 300 模拟器中错误 %}
+{% img /2016/11/30/react-native-base/UnexpectedToken.png 300 模拟器中错误 %}
 
 如果模拟器报如下错误，不容易定位到哪里发生了错误，打开浏览器调试工具->Network，点击显示红色的请求，Preview里面错误信息。
 
-{% img https://zhulichao.github.io/2016/11/30/react-native-base/debugger1.png 300 模拟器中错误 %}
-{% img https://zhulichao.github.io/2016/11/30/react-native-base/debugger2.png 300 浏览器中错误 %}
+{% img /2016/11/30/react-native-base/debugger1.png 300 模拟器中错误 %}
+{% img /2016/11/30/react-native-base/debugger2.png 300 浏览器中错误 %}
 
 如果模拟器报如下错误，哪里都不要改，重新执行`react-native run-android`重新启动，直到启起来。
 
-{% img https://zhulichao.github.io/2016/11/30/react-native-base/rn_start_err.png 见到这个错误需重新启动 %}
+{% img /2016/11/30/react-native-base/rn_start_err.png 见到这个错误需重新启动 %}
 
 如果用 ios 模拟器调试时所有操作都变得很慢，检查模拟器 → Debug → Slow Animations 是否为选中了，取消选中即可。
 
@@ -508,7 +508,7 @@ react-native run-android
 ## Webpack支持
 
 Webpack有一段介绍如下：
-{% img https://zhulichao.github.io/2016/11/30/react-native-base/webpack.png 什么是Webpack %}
+{% img /2016/11/30/react-native-base/webpack.png 什么是Webpack %}
 
 Webpack是Web前端打包的工具，不是用在移动端的。如果要在浏览器上运行React Native项目，就需要Webpack了。
 
@@ -527,7 +527,7 @@ output:{
   filename: 'bundle.js'
 },
 ```
-{% img https://zhulichao.github.io/2016/11/30/react-native-base/react-web-start.png 没有publicPath的报错 %}
+{% img /2016/11/30/react-native-base/react-web-start.png 没有publicPath的报错 %}
 
 已经按照教程测试过，简单的组件可以跑在浏览器上，可以使用浏览器的React调试工具看组件的结构。使用React Native的StyleSheet定义的样式在Web端也生效，可以使用div等html的标签。
 
@@ -541,11 +541,11 @@ output:{
 
 在一个目录下执行react-native init project_name 初始化了一个项目，能跑起来。但换个目录再执行 react-native init project_name 初始化同名项目，即使什么都没修改，也可能跑不起来，会报如下错误。但换个目录可能就能跑起来了，很奇怪。
 
-{% img https://zhulichao.github.io/2016/11/30/react-native-base/start.png 300 启动报错 %}
+{% img /2016/11/30/react-native-base/start.png 300 启动报错 %}
 
 在网上查了很多都没有找到原因，github上也有人发现类似问题。
 
-{% img https://zhulichao.github.io/2016/11/30/react-native-base/init.png 类似错误 %}
+{% img /2016/11/30/react-native-base/init.png 类似错误 %}
 
 这时请确认是否使用了**babel-plugin-transform-runtime**依赖及使用是否正确，很有可能是这个依赖导致的，如果没用可以去掉。我在去掉之后再没有发现这个问题。
 

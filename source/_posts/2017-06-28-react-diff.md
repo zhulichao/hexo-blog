@@ -21,9 +21,9 @@ React.js 相对于直接操作原生DOM有很大的性能优势，很大程度�
 
 React的Diff算法实际上只会对树进行逐层比较。在实现自己的组件时，保持稳定的DOM结构会有助于性能的提升。例如，我们有时可以通过CSS隐藏或显示某些节点，而不是真的移除或添加DOM节点。
 
-{% img https://zhulichao.github.io/2017/06/28/react-diff/传统算法O(n^3).png 传统Diff算法O(n^3) %}
+{% img /2017/06/28/react-diff/传统算法O(n^3).png 传统Diff算法O(n^3) %}
 
-{% img https://zhulichao.github.io/2017/06/28/react-diff/React算法O(n).png 500 React Diff算法O(n) %}
+{% img /2017/06/28/react-diff/React算法O(n).png 500 React Diff算法O(n) %}
 
 ## key属性在diff算法中的作用
 
@@ -174,7 +174,7 @@ React的Diff算法实际上只会对树进行逐层比较。在实现自己的�
 
 ```
 
-{% img https://zhulichao.github.io/2017/06/28/react-diff/withoutKey.png 运行结果如图 %}
+{% img /2017/06/28/react-diff/withoutKey.png 运行结果如图 %}
 
 常规的做法就是将Elong和Qunar组件先删除，然后一次创建和插入Elong、Ly和Qunar组件。通过运行结果可以看出，在React中，Elong组件不变，先将Qunar组件进行删除，然后在创建并插入Ly组件，最后再创建并插入Qunar组件，比常规的做法省去了对Elong组件的删除操作。下面再将主逻辑代码稍作调整，给每个组件添加key属性：
 
@@ -195,6 +195,6 @@ setTimeout(function() {
 ...
 ```
 
-{% img https://zhulichao.github.io/2017/06/28/react-diff/withKey.png 运行结果如图 %}
+{% img /2017/06/28/react-diff/withKey.png 运行结果如图 %}
 
 这次的Diff算法与之前有很大不同，Elong组件不变，Qunar组件不变，只是在Qunar组件之前创建并插入了Ly组件。可见使用key属性可提高渲染性能。

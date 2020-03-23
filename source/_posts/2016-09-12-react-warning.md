@@ -31,7 +31,7 @@ if (dom !== null) {
 }
 ```
 
-{% img https://zhulichao.github.io/2016/09/12/react-warning/unmountWarning.png 结果如图 %}
+{% img /2016/09/12/react-warning/unmountWarning.png 结果如图 %}
 
 ## IE11下报的render中Object类型错误
 

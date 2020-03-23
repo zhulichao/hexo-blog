@@ -11,7 +11,7 @@ tags: React Native
 - http://developer.baidu.com/，注册开发者帐号
 - 进入百度地图->API控制台，创建应用，应用类型选择Android SDK，输入发布版SHA1和包名提交即可
 
-{% img https://zhulichao.github.io/2017/06/17/react-native-baidu-map-android/key.png 申请百度地图key %}
+{% img /2017/06/17/react-native-baidu-map-android/key.png 申请百度地图key %}
 
 ## 显示地图及定位
 
@@ -195,6 +195,6 @@ const styles = StyleSheet.create({
 export default BaiduLocationTest;
 ```
 
-{% img https://zhulichao.github.io/2017/06/17/react-native-baidu-map-android/map.gif 300 百度地图 %}
+{% img /2017/06/17/react-native-baidu-map-android/map.gif 300 百度地图 %}
 
-{% img https://zhulichao.github.io/2017/06/17/react-native-baidu-map-android/location.png 500 位置信息 %}
+{% img /2017/06/17/react-native-baidu-map-android/location.png 500 位置信息 %}

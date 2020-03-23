@@ -29,11 +29,11 @@ tags: React Native
 ### 真机运行报错
 
 #### 错误1
-{% img https://zhulichao.github.io/2017/03/23/react-native-ios/ios-start-err.jpg 真机运行报错1 %}
+{% img /2017/03/23/react-native-ios/ios-start-err.jpg 真机运行报错1 %}
 需修改一下Bundle Identifier的值。
 
 #### 错误2
-{% img https://zhulichao.github.io/2017/03/23/react-native-ios/Team.jpg 真机运行报错2 %}
+{% img /2017/03/23/react-native-ios/Team.jpg 真机运行报错2 %}
 需在Xcode的`Select a project or target`中选择以Tests结尾的项目，然后选择Team。
 
 #### 错误3
@@ -55,7 +55,7 @@ tags: React Native
 - WingBlank、WhiteSpace组件，背景色为透明色，需要显示设置为白色，否则可能有穿透效果
 - Tabs在IOS需要paddingTop样式，原因如图
 
-{% img https://zhulichao.github.io/2017/03/23/react-native-ios/tabs.png Tabs在Android和IOS的不同 %}
+{% img /2017/03/23/react-native-ios/tabs.png Tabs在Android和IOS的不同 %}
 
 - TabBar的图标非常大，需要添加scale属性，表示图标缩小的比例，如`128*128`的图标，sacle为4，则显示效果为`32*32`
    

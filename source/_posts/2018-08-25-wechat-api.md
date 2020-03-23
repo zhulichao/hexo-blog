@@ -171,9 +171,9 @@ Page({
 </view>
 ```
 
-{% img https://zhulichao.github.io/2018/08/25/wechat-api/system.jpeg 300 系统弹框 %}
+{% img /2018/08/25/wechat-api/system.jpeg 300 系统弹框 %}
 
-{% img https://zhulichao.github.io/2018/08/25/wechat-api/custom.jpeg 300 自定义弹框 %}
+{% img /2018/08/25/wechat-api/custom.jpeg 300 自定义弹框 %}
 
 ## 分享
 

@@ -369,7 +369,7 @@ a.__proto__ = Array.prototype;
 a.length; // 0
 ```
 
-{% img https://zhulichao.github.io/2016/10/20/javascript-base/prototype.png 原型示意图 %}
+{% img /2016/10/20/javascript-base/prototype.png 原型示意图 %}
 
 ### 原型链
 
@@ -401,7 +401,7 @@ javascript 有三部分构成：ECMAScript，DOM和BOM。根据宿主（浏览�
 DOM（文档对象模型）是W3C的标准，所有浏览器公共遵守的标准。  
 DOM 是HTML和XML的应用程序接口（API），就是把「文档」当做一个「对象」来看待。  
 DOM 使程序和脚本有能力动态地访问和更新文档的内容、结构以及样式，是平台和语言中立的接口。
-{% img https://zhulichao.github.io/2016/10/20/javascript-base/DOM.gif DOM基本操作思维导图 %}
+{% img /2016/10/20/javascript-base/DOM.gif DOM基本操作思维导图 %}
 
 ### BOM（Browser Object Model）
 
@@ -415,7 +415,7 @@ BOM 定义了JavaScript可以进行操作的浏览器的各个功能部件的接
 > 对cookie的支持  
 > IE扩展了BOM，加入了ActiveXObject类，可以通过JavaScript实例化ActiveX对象
 
-{% img https://zhulichao.github.io/2016/10/20/javascript-base/Window.gif Window对象思维导图 %}
+{% img /2016/10/20/javascript-base/Window.gif Window对象思维导图 %}
 
 注意：window 是 BOM 对象，而非 js 对象  
 
@@ -424,7 +424,7 @@ BOM 定义了JavaScript可以进行操作的浏览器的各个功能部件的接
 Javacsript是通过访问BOM对象来访问、控制、修改客户端(浏览器)，由于**BOM的window**包含了document，因此可以直接使用window对象的document属性来访问、检索、修改XHTML文档内容与结构。因为**document对象又是DOM**模型的根节点，也就是DOM的最根本的对象是BOM的window对象的子对象，可以说，BOM包含了DOM，浏览器提供出来给予访问的是BOM对象，从BOM对象再访问到DOM对象，从而js可以操作浏览器以及浏览器读取到的文档。  
 区别：DOM描述了处理网页内容的方法和接口，BOM描述了与浏览器进行交互的方法和接口。
 
-{% img https://zhulichao.github.io/2016/10/20/javascript-base/domAndBom.jpg BOM和DOM的结构关系示意图 %}
+{% img /2016/10/20/javascript-base/domAndBom.jpg BOM和DOM的结构关系示意图 %}
 
 ## 获取字符串实际长度(包含汉字)
 
@@ -476,7 +476,7 @@ myhash["key2"] = "val2";
 
 发现javascript中的对象，如果key值为整数或整数字符，则该对象会的属性会按key值排序，使用时要注意。
 
-{% img https://zhulichao.github.io/2016/10/20/javascript-base/obj1.png 对象属性 %}
+{% img /2016/10/20/javascript-base/obj1.png 对象属性 %}
 
 ## JSON对象
 

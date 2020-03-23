@@ -46,6 +46,6 @@ jxtrq_rn
         └── App.js                  # 平台无关的项目入口文件，通常根据条件决定显示欢迎页、登录页或主页
 ```
 
-{% img https://zhulichao.github.io/2017/05/22/react-native-floder/android.png 300 android目录截图 %}
+{% img /2017/05/22/react-native-floder/android.png 300 android目录截图 %}
 
-{% img https://zhulichao.github.io/2017/05/22/react-native-floder/ios.png 300 ios目录截图 %}
+{% img /2017/05/22/react-native-floder/ios.png 300 ios目录截图 %}

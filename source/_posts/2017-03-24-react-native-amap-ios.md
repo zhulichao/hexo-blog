@@ -12,7 +12,7 @@ tags: React Native
 - 登录后，进入控制台，应用管理->我的应用，添加新key
     - Bundle ID值为 Xcode 切换到 General 标签，查看 Bundle Identifier的值
 
-{% img https://zhulichao.github.io/2017/03/24/react-native-amap-ios/ios-key.png 申请高德地图key %}
+{% img /2017/03/24/react-native-amap-ios/ios-key.png 申请高德地图key %}
 
 ## 地图及定位
 
@@ -25,7 +25,7 @@ tags: React Native
 - `npm install react-native-maps --save `
 - `react-native link react-native-maps`
 
-{% img https://zhulichao.github.io/2017/03/24/react-native-amap-ios/map1.jpg 300 高德地图 %}
+{% img /2017/03/24/react-native-amap-ios/map1.jpg 300 高德地图 %}
 
 虽然这个依赖显示了高德地图，但是经过这些安装高德地图的试验，我感觉这个依赖很奇怪。（1）没有看到高德地图相关的文件`MAMapKit.framework、AMapFoundationKit.framework、AMapSearchKit.framework `；（2）没有进行高德key值的配置，个人感觉在`react-native-maps/ios/AirMaps/AIRMapManager.m`文件中，31行应该是输入高德key值的地方。
   
@@ -81,17 +81,17 @@ class SmartAmap extends Component {
 ```
 
 这时的运行结果如下图所示，地图上并没有标注出坐标的位置，查了issuse列表看到别也提了这个问题，估计是依赖的问题，我就查了一下依赖的源码，试着找了一下，发现将**react-native-smart-amap/ios/RCTAMap/RCTAMap/RCTAMapManager.m文件中422、423、424行的NO改为YES**，地图上的位置标注就出来了，如下图所示。
-{% img https://zhulichao.github.io/2017/03/24/react-native-amap-ios/ios-map.png ios高德地图 %}
+{% img /2017/03/24/react-native-amap-ios/ios-map.png ios高德地图 %}
 
-以上都是在ios上的配置，在android端也有需要注意的地方。上一篇[React-Native-Android使用高德地图](https://zhulichao.github.io/2017/03/24/react-native-amap-android/)已经讲了在android上使用高德地图，如果想在android端也使用react-native-smart-amap这个依赖来保持一致的话，需要先将android/setting.gradle、android/app/build.gradle、MainApplication.java中关于react-native-amap-android的配置去掉，然后再按照说明文档配置react-native-smart-amap，否则会报两个错误。
+以上都是在ios上的配置，在android端也有需要注意的地方。上一篇[React-Native-Android使用高德地图](/2017/03/24/react-native-amap-android/)已经讲了在android上使用高德地图，如果想在android端也使用react-native-smart-amap这个依赖来保持一致的话，需要先将android/setting.gradle、android/app/build.gradle、MainApplication.java中关于react-native-amap-android的配置去掉，然后再按照说明文档配置react-native-smart-amap，否则会报两个错误。
 
 第一个错误如下图所示，解决办法是将gradle.properties文件中被注释的`org.gradle.jvmargs=-Xmx2048m -XX:MaxPermSize=512m -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8`放开。
-{% img https://zhulichao.github.io/2017/03/24/react-native-amap-ios/jvmargs.png 报错1 %}
+{% img /2017/03/24/react-native-amap-ios/jvmargs.png 报错1 %}
 第二个错误如下图所示，是由于包冲突，因为已经存在一个高德地图的依赖了，解决办法就是将android/setting.gradle、android/app/build.gradle、MainApplication.java中关于react-native-amap-android的配置去掉，只保留一个高德地图的配置。
-{% img https://zhulichao.github.io/2017/03/24/react-native-amap-ios/transformClassesWithDexForDebug.png 报错2 %}
+{% img /2017/03/24/react-native-amap-ios/transformClassesWithDexForDebug.png 报错2 %}
 
 而且android也是存在位置标注不显示的问题，需要将**react-native-smart-amap/android/src/main/reactnativecomponent/amap/RCTAMapView.java文件的202行注释放开**，地图上的位置标注就出来了，如下图所示。
-{% img https://zhulichao.github.io/2017/03/24/react-native-amap-ios/android-map.png android高德地图 %}
+{% img /2017/03/24/react-native-amap-ios/android-map.png android高德地图 %}
 
 ### [react-native-smart-amap-location](https://github.com/react-native-component/react-native-smart-amap-location)
 
@@ -172,4 +172,4 @@ class SmartAmap extends Component {
 export default AppEventListenerEnhance(SmartAmap);
 ```
 
-{% img https://zhulichao.github.io/2017/03/24/react-native-amap-ios/location.png 高德地图定位 %}
+{% img /2017/03/24/react-native-amap-ios/location.png 高德地图定位 %}

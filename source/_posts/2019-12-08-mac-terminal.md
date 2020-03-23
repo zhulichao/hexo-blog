@@ -80,4 +80,4 @@ antigen apply
 "terminal.integrated.fontFamily": "'FuraCode Nerd Font'",
 ```
 
-{% img https://zhulichao.github.io/2019/12/08/mac-terminal/terminal.jpg 效果图 %}
+{% img /2019/12/08/mac-terminal/terminal.jpg 效果图 %}

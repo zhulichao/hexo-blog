@@ -237,7 +237,7 @@ allprojects {
 - 先运行android项目
 - cmd进入在ReactNativeAPPDemo的根目录，执行 npm start
 
-{% img https://zhulichao.github.io/2017/05/04/react-native-insert-android/insert-android.gif 300 运行结果 %}
+{% img /2017/05/04/react-native-insert-android/insert-android.gif 300 运行结果 %}
 
 ## 可能出现的错误
 
@@ -302,4 +302,4 @@ public class MyReactActivity extends AppCompatActivity implements DefaultHardwar
     }
 }
 ```
-{% img https://zhulichao.github.io/2017/05/04/react-native-insert-android/insert-android2.gif 300 运行结果 %}
+{% img /2017/05/04/react-native-insert-android/insert-android2.gif 300 运行结果 %}

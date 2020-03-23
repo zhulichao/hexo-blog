@@ -46,7 +46,7 @@ Bulletproof技术，防弹衣技术，建议在所有新的HTML5块级元素中�
 
 ## outerHTML、innerText、innerHTML
 
-{% img https://zhulichao.github.io/2016/09/21/scattered-knowledge/innerHTML.gif 一张图了解outerHTML和innerText、innerHTML %}
+{% img /2016/09/21/scattered-knowledge/innerHTML.gif 一张图了解outerHTML和innerText、innerHTML %}
 
 ## echo
 
@@ -56,21 +56,21 @@ cmd中输入`echo %PATH%` 可查看path环境变量
 
 前几天发现一个奇怪的问题，使用Chrome浏览器在登录输入用户名、密码后，点击了保存用户名密码，在其它页面发生了用户名、密码的回填。
 
-{% img https://zhulichao.github.io/2016/09/21/scattered-knowledge/login1.png 登录输入 %}
+{% img /2016/09/21/scattered-knowledge/login1.png 登录输入 %}
 
-{% img https://zhulichao.github.io/2016/09/21/scattered-knowledge/save.png 点击保存密码 %}
+{% img /2016/09/21/scattered-knowledge/save.png 点击保存密码 %}
 
-{% img https://zhulichao.github.io/2016/09/21/scattered-knowledge/card.png 其它页面表单 %}
+{% img /2016/09/21/scattered-knowledge/card.png 其它页面表单 %}
 
 解决方案：在使用到Input的地方，都添加了autoComplete属性值为off和name属性，但是不同的name属性值，有的可能不会回填有的可能就会回填，我有点怀疑人生了。
 
-{% img https://zhulichao.github.io/2016/09/21/scattered-knowledge/card1.png 回填登录信息 %}
+{% img /2016/09/21/scattered-knowledge/card1.png 回填登录信息 %}
 
-{% img https://zhulichao.github.io/2016/09/21/scattered-knowledge/card2.png 没有回填登录信息 %}
+{% img /2016/09/21/scattered-knowledge/card2.png 没有回填登录信息 %}
 
 **而且对于没有回填用户信息的情况，在点击密码框的时候，还是会有用户密码信息的提示，这个还没有找到解决方案。**
 
-{% img https://zhulichao.github.io/2016/09/21/scattered-knowledge/card2.png 提示用户密码 %}
+{% img /2016/09/21/scattered-knowledge/card2.png 提示用户密码 %}
 
 ## 端口占用
 

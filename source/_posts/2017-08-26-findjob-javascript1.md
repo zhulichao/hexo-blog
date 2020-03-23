@@ -567,7 +567,7 @@ tags: JavaScript
     ```
 
 - 如何使用CSS实现如图效果，其中矩形：width=200px height=100px，三角形：底为40px 高为50px，并垂直居中于矩形右侧。
-{% img https://zhulichao.github.io/2017/08/26/findjob-other/css1.png 效果图 %}
+{% img /2017/08/26/findjob-other/css1.png 效果图 %}
 
     ```html
     <!DOCTYPE html>

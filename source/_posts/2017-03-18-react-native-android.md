@@ -119,7 +119,7 @@ AppRegistry.registerComponent('opms', () => opms);
 
 - 运行结果
 
-{% img https://zhulichao.github.io/2017/03/18/react-native-android/Android-Module.png 调用Android原生模块 %}
+{% img /2017/03/18/react-native-android/Android-Module.png 调用Android原生模块 %}
 
 ## [创建Android View](http://reactnative.cn/docs/0.42/native-component-ios.html#content)
 
@@ -247,7 +247,7 @@ AppRegistry.registerComponent('opms', () => opms);
 - 运行结果
 
 当ImageView组件使用到属性src时，很奇怪会报错，所有操作都是按照官方教程做的仍然报错，网上也没有查到原因。
-{% img https://zhulichao.github.io/2017/03/18/react-native-android/Android-View-Err.png 300 调用Android原生View %}
+{% img /2017/03/18/react-native-android/Android-View-Err.png 300 调用Android原生View %}
 
 但是如果使用其它属性，如borderRadius，是不会报错的，通过React组件调试工具也能看到属性已经添加上了，应该是已经成功调用了Android原生View。
-{% img https://zhulichao.github.io/2017/03/18/react-native-android/Android-View2.png 调用Android原生View %}
+{% img /2017/03/18/react-native-android/Android-View2.png 调用Android原生View %}

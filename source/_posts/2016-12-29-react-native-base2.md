@@ -153,7 +153,7 @@ getTextInputPosition: function(fx, fy, width, height, px, py) {
 ...
 ```
 
-{% img https://zhulichao.github.io/2016/12/29/react-native-base2/measure.png 结果如图 %}
+{% img /2016/12/29/react-native-base2/measure.png 结果如图 %}
 
 ## AsyncStorage
 

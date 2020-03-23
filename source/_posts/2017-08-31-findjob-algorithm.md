@@ -10,7 +10,7 @@ tags: Algorithm
 
 首先要知道**完全二叉树**的概念：叶节点只能出现在最下层和次下层，并且最下面一层的结点都集中在该层最左边的若干位置的二叉树。
 
-{% img https://zhulichao.github.io/2017/08/31/findjob-algorithm/CompleteBinaryTree.png 完全二叉树 %}
+{% img /2017/08/31/findjob-algorithm/CompleteBinaryTree.png 完全二叉树 %}
 
 堆可以视为一棵完全的二叉树，大顶堆中每个父节点的元素值都大于等于其孩子结点的值，小顶堆中每个父节点的元素值都小于等于其孩子结点的值。
 

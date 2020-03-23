@@ -130,4 +130,4 @@ tags: 开发环境
     }
     ```
 
-    {% img https://zhulichao.github.io/2017/11/14/mac-development-environment/maven.png 错误信息 %}
+    {% img /2017/11/14/mac-development-environment/maven.png 错误信息 %}

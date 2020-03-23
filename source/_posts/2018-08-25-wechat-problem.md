@@ -10,7 +10,7 @@ tags: WeChat
 
 ## 登录流程
 
-{% img https://zhulichao.github.io/2018/08/25/wechat-problem/flow.png 小程序登录流程 %}
+{% img /2018/08/25/wechat-problem/flow.png 小程序登录流程 %}
 
 ## 部分用户没有 unionId
 

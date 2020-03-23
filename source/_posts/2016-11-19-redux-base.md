@@ -44,7 +44,7 @@ tags: Redux
 
 ## 工作流程
 
-{% img https://zhulichao.github.io/2016/11/19/redux-base/ReduxFlow.png  Redux的工作流程 %}
+{% img /2016/11/19/redux-base/ReduxFlow.png  Redux的工作流程 %}
 
 - 用户发出 Action，`store.dispatch(action);`
 - Store 自动调用 Reducer，`let nextState = todoApp(previousState, action);`
@@ -122,7 +122,7 @@ Store 允许使用store.subscribe方法设置监听函数，一旦State发生变
 
 ## 中间件
 
-{% img https://zhulichao.github.io/2016/11/19/redux-base/MiddleWares.png  中间件（middleware） %}
+{% img /2016/11/19/redux-base/MiddleWares.png  中间件（middleware） %}
 
 中间件就是一个函数，对store.dispatch方法进行了改造，在发出Action和执行Reducer这两步之间，添加了其他功能。
 ```

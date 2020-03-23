@@ -615,4 +615,4 @@ Object.assign(global, {
 App({...});
 ```
 
-{% img https://zhulichao.github.io/2018/08/25/wechat-base1/lodash.png 使用 lodash 报错 %}
+{% img /2018/08/25/wechat-base1/lodash.png 使用 lodash 报错 %}

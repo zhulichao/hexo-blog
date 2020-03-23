@@ -188,4 +188,4 @@ DRY是“Don't Repeat Yourself”的缩写，意思是说，在一个系统里�
 
 关系管理，是指您感知到周遭的“情绪场”之后，能够掌控自我情绪并把握他人情绪值，来让双方进行更好的互动。
 
-{% img https://zhulichao.github.io/2017/09/23/full-stack-developer/timg.jpg 时间管理四象限 %}
+{% img /2017/09/23/full-stack-developer/timg.jpg 时间管理四象限 %}

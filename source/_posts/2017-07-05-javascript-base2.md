@@ -116,8 +116,8 @@ console.log(2);
 debugger;
 func1(); // 这时只有Global
 ```
-{% img https://zhulichao.github.io/2017/07/05/javascript-base2/运行顺序.png 400 运行顺序 %}
-{% img https://zhulichao.github.io/2017/07/05/javascript-base2/调试.gif Chrome调试 %}
+{% img /2017/07/05/javascript-base2/运行顺序.png 400 运行顺序 %}
+{% img /2017/07/05/javascript-base2/调试.gif Chrome调试 %}
 
 ## 作用域
 
@@ -259,7 +259,7 @@ console.log(Person.prototype); // 输出一个Object，有constructor属性
 console.log(Person.prototype.constructor === Person); // true
 ```
 
-{% img https://zhulichao.github.io/2017/07/05/javascript-base2/内存.png 内存 %}
+{% img /2017/07/05/javascript-base2/内存.png 内存 %}
 
 JavaScript是动态语言，取决于运行时，不是定义时，因此下面的代码中示例一的对象o是有sayHello方法的。通过如示例二、示例三、示例四的方式给Function、String、jquery等全局函数的prototype添加方法来实现共有的新功能。
 
@@ -486,7 +486,7 @@ var Actor = Person3.extends({
 var jobs3 = new Actor();
 ```
 
-{% img https://zhulichao.github.io/2017/07/05/javascript-base2/继承.png 我对继承的理解 %}
+{% img /2017/07/05/javascript-base2/继承.png 我对继承的理解 %}
 
 封装商业框架，有Model和View。
 

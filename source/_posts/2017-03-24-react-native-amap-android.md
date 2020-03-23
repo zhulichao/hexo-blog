@@ -15,7 +15,7 @@ tags: React Native
         `cd .android`  
         `keytool -list -v -keystore debug.keystore`
 
-{% img https://zhulichao.github.io/2017/03/24/react-native-amap-android/android-key.png 申请高德地图key %}
+{% img /2017/03/24/react-native-amap-android/android-key.png 申请高德地图key %}
 
 ## 显示地图
 
@@ -96,7 +96,7 @@ export default Amap;
 * 启动
 react-native run-android 启动后，报如下错误，将`node_modules\react-native-amap-view\android\src\main\java\com\dianwoba\rctamap\RegionChangeEvent.java`的17行 改为`super(id);`就不报这个错了。**之后可能需要重启6、7次才能正常启动起来。**
 
-  {% img https://zhulichao.github.io/2017/03/24/react-native-amap-android/mapError.png 报错如图 %}
+  {% img /2017/03/24/react-native-amap-android/mapError.png 报错如图 %}
 
 ## 地图定位
 
@@ -210,13 +210,13 @@ class Amap extends Component {
 export default Amap;
 ```
 
-{% img https://zhulichao.github.io/2017/03/24/react-native-amap-android/map.jpg 300 地图 %}
-{% img https://zhulichao.github.io/2017/03/24/react-native-amap-android/locationText.png 位置信息 %}
+{% img /2017/03/24/react-native-amap-android/map.jpg 300 地图 %}
+{% img /2017/03/24/react-native-amap-android/locationText.png 位置信息 %}
 
 注意，如果是在模拟器上可能由于缺少定位权限报如下错误。
 
-{% img https://zhulichao.github.io/2017/03/24/react-native-amap-android/mapError3.png 300 报错 %}
-{% img https://zhulichao.github.io/2017/03/24/react-native-amap-android/mapError4.png 缺少定位权限 %}
+{% img /2017/03/24/react-native-amap-android/mapError3.png 300 报错 %}
+{% img /2017/03/24/react-native-amap-android/mapError4.png 缺少定位权限 %}
 
 ## 配置签名后key值问题
 
