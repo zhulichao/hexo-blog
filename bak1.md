@@ -1,4 +1,4 @@
-{% img https://zhulichao.github.io/2017/08/31/findjob-algorithm/CompleteBinaryTree.png 400 完全二叉树 %}
+{% img /2017/08/31/folder/image.png 400 完全二叉树 %}
 
 ---
 
