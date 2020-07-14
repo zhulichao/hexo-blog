@@ -78,11 +78,11 @@ search:
   path: search.xml
   field: post
 
-duoshuo_shortname: zlc10
-duoshuo_share: true
-duoshuo_info:
-  ua_enable: true
-  admin_enable: false
-  user_id: 6325922180978705000
-  admin_nickname: 小朱
+# duoshuo_shortname: zlc10
+# duoshuo_share: true
+# duoshuo_info:
+#   ua_enable: true
+#   admin_enable: false
+#   user_id: 6325922180978705000
+#   admin_nickname: 小朱
 use_font_lato: false
