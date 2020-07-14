@@ -2,8 +2,8 @@
 title: React-警告
 layout: post
 date: 2016-09-12 14:52:43
-categories:
-tags:
+categories: React
+tags: React
 ---
 
 ## 请求数据放在componentDidMount方法中的警告

@@ -2,9 +2,10 @@
 title: Redux-基础
 layout: post
 date: 2016-11-19 01:41:22
-categories: Redux
-tags: Redux
+categories: React
+tags: React
 ---
+
 参考  
 [Redux 入门教程（一）：基本用法](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html)  
 [Redux 入门教程（二）：中间件与异步操作](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_two_async_operations.html)  

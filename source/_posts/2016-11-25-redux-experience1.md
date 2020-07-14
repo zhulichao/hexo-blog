@@ -2,8 +2,8 @@
 title: Redux-学习经验
 layout: post
 date: 2016-11-25 08:47:18
-categories: Redux
-tags: Redux
+categories: React
+tags: React
 ---
 
 ## 进行网络请求

@@ -5,10 +5,10 @@ date: 2016-10-15 23:39:35
 categories: React
 tags: React
 ---
+
 ## 前端自动化单元测试
 
 使用**Karma + Mocha + Chai + Sinon + Enzyme**测试React + Redux的web应用，还可能用到Jsdom
-
 
 ---
 ### 工具介绍

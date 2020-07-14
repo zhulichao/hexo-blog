@@ -8,6 +8,8 @@ tags: Project Base
 
 一定要语义化，所有命名使用有意义的英文单词，复数加 s，一定不要拼写错误，尽量不要缩写，可以借助 IDE 插件进行检查，如 Code Spell Checker，使用统一的风格，哪里用 camelCase，哪里用 kebab-case，保持一致，减少写注释。
 
+[火星科技Web前端编码规范](http://marsgis.cn/w3cschool/codeguide/index.html)
+
 ## 环境变量
 
 - 使用环境变量加载与部署相关的配置，永远也不要把它们作为常量写入代码，密钥和其它有价值的信息应该与代码库分离
@@ -58,10 +60,11 @@ tags: Project Base
 - 尽量不要自己拼接字符串和格式转换，使用 classsnames、query-string、numerical、lodash、date-fns、moment.js 等第三方工具
 - 验证尽量使用 validator 等第三方工具
 - 页面中使用封装好的组件进行布局，如 Layout、Row、Column、Container，当需要做页面适配的时候，只需修改这些公用组件，其它地方是不需要处理的
-- !即使有默认值也最好写上，万一以后改了默认值就不用修改代码了
+- 即使有默认值也最好写上，万一以后改了默认值就不用修改代码了
 - 标签引用顺序保持一致，template、script、style
 - 引用时绝对路径引用和相对路径引用分开，中间加空行；如果是引用到目录，以斜杠结尾 `import AdvSearch from 'components/AdvSearch/'`；引用文件和正式代码中间加空行
 - 单引号、双引号使用场景
+- 结尾都写分号，分行的对象属性结尾都写逗号
 - 组件的文件夹下，用 index 文件进行默认导出
 - 多个地方引用的常量，通过 config 文件进行配置，统一从 config 文件引用，常量用全大写
 - 引用有使用 @ 的，还有写完整路径的，主要是 api 文件夹下
@@ -87,6 +90,8 @@ tags: Project Base
 
 ## changelog
 
+- [Keep a Changelog](http://keepachangelog.com/)
+- [Semantic Versioning](http://semver.org/)
 - 简洁，主要描述功能的修改
 - markdown 格式，最新发布的版本在上面
 - 标明分类，新增、修改、删除等

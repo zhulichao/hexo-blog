@@ -2,8 +2,8 @@
 title: jQuery-基础
 layout: post
 date: 2016-11-14 20:30:53
-categories: Jquery
-tags: Jquery
+categories: JavaScript
+tags: JavaScript
 ---
 
 parent([expr]) -- 获得当前匹配元素集合中每个元素的**父元素**，使用选择器进行筛选是可选的，沿 DOM 树向上遍历单一层级  

@@ -2,8 +2,8 @@
 title: Fetch替代Ajax
 layout: post
 date: 2016-10-22 21:31:18
-categories: Fetch
-tags: Fetch
+categories: JavaScript
+tags: JavaScript
 ---
 
 ## Fetch出现原因

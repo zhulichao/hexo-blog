@@ -74,7 +74,7 @@ module.exports = {
 - 项目根目录添加 .stylelintrc.js 文件，内容如下
 
 ```
-// z.stylelintrc.js 文件
+// stylelintrc.js 文件
 module.exports = {
   extends: ['stylelint-config-standard', 'stylelint-config-prettier'],
   plugins: ['stylelint-order'],
@@ -271,7 +271,7 @@ module.exports = {
 
 ## 格式检查
 
-- VSCode 中添加 **Prettier - Code formatter** 插件，参考 [prettier 官网](https://prettier.io) 进行配置，配置完成可用 Alt + Option + F 进行代码格式化
+- VSCode 中添加 **Prettier - Code formatter** 插件，参考 [prettier 官网](https://prettier.io) 进行配置，配置完成可用 Alt + Shift + F 进行代码格式化
 - 项目添加 eslint-config-prettier、eslint-plugin-prettier 包
 - 项目根目录添加 .prettierrc.js 文件，内容如下
 

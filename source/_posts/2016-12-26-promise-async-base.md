@@ -277,7 +277,14 @@ function spawn(genF) {
 
 async 函数的用法：
 
+```
+async function getStockPriceByName(name) {
+  const symbol = await getStockSymbol(name);
+  const stockPrice = await getStockPrice(symbol);
+  return stockPrice;
+}
 
----
-
-如果某些事件不断地反复发生，一般来说，使用stream模式是比部署Promise更好的选择。
+getStockPriceByName('goog').then(function (result) {
+  console.log(result);
+});
+```

@@ -29,4 +29,4 @@ tags: React Native
 [react-native-orientation](https://github.com/yamill/react-native-orientation) 监听设备方向变化、设置屏幕方向锁定
 [react-native-sqlite-storage](https://github.com/andpor/react-native-sqlite-storage) SQLite数据库
 [react-native-config](https://github.com/luggit/react-native-config) 配置环境变量
-
+[react-native-push-notification](https://www.npmjs.com/package/react-native-push-notification) 消息提醒

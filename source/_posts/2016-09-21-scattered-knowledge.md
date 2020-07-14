@@ -70,7 +70,7 @@ cmd中输入`echo %PATH%` 可查看path环境变量
 
 **而且对于没有回填用户信息的情况，在点击密码框的时候，还是会有用户密码信息的提示，这个还没有找到解决方案。**
 
-{% img /2016/09/21/scattered-knowledge/card2.png 提示用户密码 %}
+{% img /2016/09/21/scattered-knowledge/card3.png 提示用户密码 %}
 
 ## 端口占用
 
