@@ -2,8 +2,8 @@
 title: Lodash 之 debounce
 layout: post
 date: 2018-01-26 10:17:56
-categories:
-tags: Lodash
+categories: JavaScript
+tags: JavaScript
 ---
 
 ## 了解 Throttling（防抖） 和 Debouncing（节流）

@@ -6,7 +6,7 @@ categories: Ant Design
 tags: Ant Design
 ---
 
-##  注意点
+## 注意点
 
 - Popover、Progress外面如果没有View并且给高度的话可能不显示，外层是ScrollView应该也可以显示
 - Tabs最好指定activeKey否则可能有奇怪的返回第一个TabPane问题

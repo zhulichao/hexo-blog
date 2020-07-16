@@ -1,5 +1,5 @@
 ---
-title: 小程序基础组件
+title: 小程序 Swiper 使用
 layout: post
 date: 2018-08-25 13:02:05
 categories: WeChat

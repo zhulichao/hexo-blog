@@ -2,8 +2,8 @@
 title: 不同类型的图片
 layout: post
 date: 2019-09-30 09:26:18
-categories: UI
-tags: UI
+categories: CSS
+tags: CSS
 ---
 
 ## GIF

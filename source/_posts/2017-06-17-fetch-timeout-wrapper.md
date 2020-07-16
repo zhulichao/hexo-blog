@@ -2,8 +2,8 @@
 title: Fetch-Timeout-Wrapper
 layout: post
 date: 2017-06-17 09:52:18
-categories: ES6
-tags: ES6
+categories: React-Native
+tags: React-Native
 ---
 
 在使用react-native进行开发时，用到网络请求的地方，如果服务端未启动或存在网络问题，会弹出Network request failed，想自己设置客户端超时时间及超时提示信息，在react-native问题列表和网上查找后，已确认react-native用的fetch没有直接提供timeout设置的。

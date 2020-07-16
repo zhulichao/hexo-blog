@@ -6,8 +6,7 @@ categories: React
 tags: React
 ---
 
-[create-react-app
-](https://github.com/facebookincubator/create-react-app) 初始化空的react项目
+[create-react-app](https://github.com/facebookincubator/create-react-app) 初始化空的react项目
 
 [redux-saga](http://leonshi.com/redux-saga-in-chinese/index.html) 处理异步利器
 

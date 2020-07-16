@@ -416,7 +416,7 @@ for(let x of iterTree(array)) {
                 background: #444;
                 position: relative;
                 margin: 20px;
-                // 指针效果
+                /* 指针效果 */
                 border-radius: 50px 0 50px 50px;
             }
         </style>
@@ -532,7 +532,8 @@ for(let x of iterTree(array)) {
     </body>
     </html>
     ```
-    
+    {% img /2017/08/31/findjob-javascript-code/turntable.png 400 效果图 %}
+
 - 股票利润：假如一个数组中存储了一个股票在一天交易窗口内各时间点的股票价格（正整数），只允许一次买入和一次卖出，计算出通过卖出和买入可以得到的最大利润。
 
     思路：只要找出输入数组中最大的差值即可。遍历一遍数组，求出每个元素前面的最小值，每个元素与对应最小值的差即为该元素对应的收益，所有元素收益的最大值就是所求值。

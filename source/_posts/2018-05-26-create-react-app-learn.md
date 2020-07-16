@@ -2,8 +2,8 @@
 title: create-react-app 学习
 layout: post
 date: 2018-05-26 15:20:06
-categories: Boilerplate
-tags: Boilerplate
+categories: Project Base
+tags: Project Base
 ---
 
 ## Monorepo

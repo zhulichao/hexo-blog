@@ -2,8 +2,8 @@
 title: GitLab 代码审核
 layout: post
 date: 2020-06-12 10:10:05
-categories: Project Management
-tags: Project Management
+categories: Git
+tags: Git
 ---
 
 ## 设置钉钉 GitLab 机器人
