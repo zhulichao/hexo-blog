@@ -63,3 +63,10 @@ Next.js 有两种预渲染方式，Static Generation 和 Server-side Rendering�
 - getServerSideProps (Server-side Rendering): 每次请求时获取数据，只在服务端执行，
 
 除此之外，还可使用 getInitialProps API 获取数据，getInitialProps 适合通用数据抓取和服务器端渲染，有利于 SEO。这些方法只能在 page 页面导出。
+
+### 有用的包
+
+- 使用 next-optimized-images 引入图片文件，并在部署时自动优化图片
+- 使用 next-css 加载 css 文件
+- 使用 next-compose-plugin 维护 next.config.js 文件整洁性
+- 使用 @next/bundle-analyzer 分析打包效果

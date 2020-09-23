@@ -54,7 +54,7 @@ onLoadData(treeNode) {
 ```
 
 ---
-## Form组件(待完成)
+## Form组件
 
 参考 [Form](https://ant.design/components/form/) 和 [rc-form](http://react-component.github.io/form/)
 

@@ -6,7 +6,7 @@ categories: Git
 tags: Git
 ---
 
-在项目开发中，如果改变了文件或文件夹名称的大小写，默认情况下 git 是无法检测到的，因为 git 是不区分大小写的，windows 和 mac 系统默认也是不区分大小写的，可通过以下两种方式进行处理。
+在项目开发中，如果改变了文件或文件夹名称的大小写，默认情况下 git 是无法检测到的，因为 git 是不区分大小写的，windows 和 mac 系统默认也是不区分大小写的。
 
 ## 方式一
 
@@ -26,3 +26,5 @@ tags: Git
 ## 方式二
 
 可以将电脑磁盘单独分出一个大小写敏感的分区作为开发空间，再关闭 git 忽略大小写即可。注意在大小写敏感的分区开发时，如果存在同名大小写不同的文件，有些编辑器如 vscode 可能只会加载一个文件。
+
+最后，可以使用 [case-sensitive-paths-webpack-plugin](https://github.com/Urthen/case-sensitive-paths-webpack-plugin) 强制所有模块的整个路径匹配磁盘上的实际路径的。
