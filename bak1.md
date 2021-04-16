@@ -70,8 +70,6 @@ redux怎么实现页面数据更新的 http://www.ruanyifeng.com/blog/2016/01/fl
 
 webcomponents 系列规范
 
-MVVM
-
 ES6的class、构造函数还要琢磨琢磨
 
 路由的机制、原理，不要弄成链接，返回时应该是push，因为已经是状态了
@@ -83,8 +81,6 @@ router 怎么实现url也页面的统一
 学习dva生成组件
 
 学习 extjs angular jQuery 组件化思想
-
-CDP wiki
 
 jsp、servlet
 
