@@ -123,11 +123,6 @@ $themes: (
   }
 }
 
-@function themed($key) {
-  @return map-get($theme-map, $key);
-}
-
-
 @mixin themedColor($key, $name) {
   @include themeify {
     #{$key}: themed($name) !important;
