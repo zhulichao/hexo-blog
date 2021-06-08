@@ -87,9 +87,9 @@ tags: JavaScript
         }
     });
     // 读取属性特性
-    Object.getOwnPrototypeDescriptor(obj, '_year');
+    Object.getOwnPropertyDescriptor(obj, '_year');
     // 读取所有属性特性
-    Object.getOwnPrototypeDescriptors(obj);
+    Object.getOwnPropertyDescriptors(obj);
     ```
 
     Object.preventExtensions(obj) 禁止扩展，禁止给对象添加属性和方法，原有的属性可修改
@@ -103,7 +103,7 @@ tags: JavaScript
     
     事件冒泡，从内到外；事件捕获，从外到内；DOM事件流，从外到内再从内到外回到原点。事件冒泡允许多个操作被集中处理，把事件处理器添加到一个父级元素上，避免把事件处理器添加到多个子级元素上，可以优化性能，在页面动态添加新元素后，这些新增的元素也不用再绑定事件，它还可以让你在对象层的不同级别捕获事件。
 
-    blur、focus、load、unload不冒泡。使用addEventListener绑定事件的方法第三个参数可以控制事件触发顺序，true为事件捕获，false为事件冒泡，默认为false。使用attatchEvent绑定事件的方法不能控制事件触发顺序。
+    blur、focus、load、unload不冒泡。使用addEventListener绑定事件的方法第三个参数可以控制事件触发顺序，true为事件捕获，false为事件冒泡，默认为false。使用attachEvent绑定事件的方法不能控制事件触发顺序。
 
     阻止事件冒泡不能阻止对象默认行为，如submit按钮会提交表单数据。
 

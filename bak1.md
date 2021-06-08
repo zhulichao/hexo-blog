@@ -26,8 +26,6 @@ async await
 
 * 学习Redux-saga，可以解决cdp-ui中发起多个请求的问题，处理异步利器 -- Redux-saga  https://zhuanlan.zhihu.com/p/25024255
 
-cookie 和 session
-
 ---
 
 ## 近期需要看

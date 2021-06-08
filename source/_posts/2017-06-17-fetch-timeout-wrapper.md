@@ -2,7 +2,7 @@
 title: Fetch-Timeout-Wrapper
 layout: post
 date: 2017-06-17 09:52:18
-categories: React-Native
+categories: React Native
 tags: React Native
 ---
 
