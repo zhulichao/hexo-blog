@@ -217,7 +217,7 @@ function deepFreeze(obj) {
 在JavaScript中，变量和函数的声明都会提升到作用域的最前面。函数表达式并没有被提升，这也是函数表达式与函数声明的区别。
 ```
 (function(){
-  f1(); // ReferenceError: f1 is not defined
+  f1(); // ReferenceError: f1 is not a function
   f2();
   var f1 = function(){};
   function f2(){}
