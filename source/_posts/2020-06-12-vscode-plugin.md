@@ -64,6 +64,8 @@ tags: VSCode
 
 [Settings Sync](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync) 设置同步
 
+[Search node_modules](https://marketplace.visualstudio.com/items?itemName=jasonnutter.search-node-modules) 搜索node_modules下目录
+
 ## Settings Sync 使用
 
 ### 上传设置
