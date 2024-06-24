@@ -171,7 +171,7 @@ console.log(o2.name); // 输出gates
 console.log(o1.sayHello === o2.sayHello); // 输出false
 ```
 
-用方式一模拟类，第三个输出结果为 true，这时不存在内存浪费了，但破坏了封装，在外部也可以调用 sayHello 方法。
+用方式二模拟类，第三个输出结果为 true，这时不存在内存浪费了，但破坏了封装，在外部也可以调用 sayHello 方法。
 
 ```js
 // 方式二
@@ -460,6 +460,7 @@ function Class(options) {
             */
             this.constructor = Child;
         };
+        // F.prototype.constructor = Child;
         F.prototype = this.prototype;// 继承
         var f = new F();
         Child.prototype = f;

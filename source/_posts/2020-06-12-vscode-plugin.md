@@ -66,6 +66,8 @@ tags: VSCode
 
 [Search node_modules](https://marketplace.visualstudio.com/items?itemName=jasonnutter.search-node-modules) 搜索node_modules下目录
 
+[Project Name in StatusBar](https://marketplace.visualstudio.com/items?itemName=mujichOk.vscode-project-name-in-statusbar) 可在下面状态栏显示项目名称
+
 ## Settings Sync 使用
 
 ### 上传设置

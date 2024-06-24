@@ -301,7 +301,7 @@ for(let x of iterTree(array)) {
             fn.__EventID = eventHandlesCounter++;
         }
         if(!obj.__EventHandles) {
-            obj.__EventHandles = [];
+            obj.__EventHandles = []; // 应该是 {}
         }
         if(!obj.__EventHandles[evt]) {
             obj.__EventHandles[evt] = [];
